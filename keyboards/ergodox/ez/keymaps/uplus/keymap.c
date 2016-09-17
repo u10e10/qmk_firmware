@@ -15,47 +15,45 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   =    |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |   -    |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Bspc   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  | ;/ L2| '/Gui  |
- * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
- * | Esc    |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//Ctrl| RShift |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |Grv/L1|  '"  |      |      |      |                                       |      |      |   [  |   ]  | ~L1  |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,---------------.
- *                                        |Alt/App| LGui |       | Alt  |Ctrl/Esc|
- *                                 ,------|-------|------|       |------+--------+------.
- *                                 |Shf / |       | Del  |       |      |        | LT   |
- *                                 |  Eisu| Space |------|       |------| Enter  | SYMB |
- *                                 |      |       | BS   |       |      |        |      |
- *                                 `---------------------'       `----------------------'
+ * ,--------------------------------------------------.     ,--------------------------------------------------.
+ * |   L3   |   1  |   2  |   3  |   4  |   5  |      |     |      |   6  |   7  |   8  |   9  |   0  |        |
+ * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
+ * |Tab/Hyp |   Q  |   W  |   E  |   R  |   T  |      |     |  -   |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
+ * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/ L2| '/Gui  |
+ * |--------+------+------+------+------+------|      |     |  =   |------+------+------+------+------+--------|
+ * |Esc/Gui |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl| RShift |
+ * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
+ * |   L3   |      |      |      |      |                                 |   (  |   )  |   [  |   ]  |        |
+ * `------------------------------------'                                 `------------------------------------'
+ *                                     ,--------------.     ,--------------.
+ *                                     |BS/Alt | App  |     |      |Esc/Alt|
+ *                              ,------|-------|------|     |------+-------+-------.
+ *                              |      |       | Del  |     |      | Alt/  |Enter/ |
+ *                              |Space |LShift |------|     |------| Space |  L1   |
+ *                              |      |       | Eng  |     | Jp   |       |       |
+ *                              `---------------------'     `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
-    // left hand
-    KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_NO,
-    KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_NO,
-    KC_BSPC,        KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-    KC_ESC,         CTL_T(KC_Z),  KC_X,   KC_C,   KC_V,   KC_B,   ALL_T(KC_NO),
-    LT(SYMB,KC_GRV),KC_QUOT,      KC_NO,  KC_NO,  KC_NO,
-                                                        ALT_T(KC_APP),  KC_LGUI,
-                                                                        KC_DELT,
-                                       SFT_T(KC_LANG2),     KC_SPC,     KC_BSPC,
+    MO(LHND),       KC_1,      KC_2,   KC_3,   KC_4,   KC_5,   KC_NO,
+    ALL_T(KC_TAB),  KC_Q,      KC_W,   KC_E,   KC_R,   KC_T,   KC_NO,
+    KC_LCTL,        KC_A,      KC_S,   KC_D,   KC_F,   KC_G,
+    GUI_T(KC_ESC),  KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   KC_NO,
+    MO(LHND),       KC_NO,     KC_NO,  KC_NO,  KC_NO,
+                                               ALT_T(KC_BSPC), KC_APP,
+                                                               KC_DELT,
+                               KC_SPC,         OSM(MOD_LSFT),  KC_LANG1,
 
-            // right hand
-             KC_NO,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             KC_NO,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
-                          KC_H,   KC_J,   KC_K,   KC_L,   LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
-             MEH_T(KC_NO),KC_N,   KC_M,   KC_COMM,KC_DOT, CTL_T(KC_SLSH),   KC_RSFT,
-                                  KC_UP,  KC_DOWN,KC_LBRC,KC_RBRC,          KC_FN1,
-             KC_LALT,   CTL_T(KC_ESC),
-             KC_NO,
-             KC_NO,     KC_ENT,         LT(SYMB, KC_LANG1)
+    KC_NO,       KC_6,   KC_7,     KC_8,    KC_9,   KC_0,             KC_NO,
+    KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,   KC_P,             KC_BSLS,
+                 KC_H,   KC_J,     KC_K,    KC_L,   LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
+    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT, CTL_T(KC_SLSH),   OSM(MOD_RSFT),
+                         KC_LPRN,  KC_RPRN, KC_LBRC, KC_RBRC,KC_NO,
+    KC_NO,       ALT_T(KC_ESC),
+    KC_NO,
+    KC_LANG2,    ALT_T(KC_SPC),    LT(SYMB, KC_ENT)
     ),
 
 
