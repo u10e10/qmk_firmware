@@ -219,6 +219,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   return true;
 }
 
+#define M_S(key) D(LSFT), T(key), U(LSFT)
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
   // MACRODOWN only works in this function
@@ -231,6 +232,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                 return MACRO(I(0), T(H), T(E), T(L), T(L), T(O), T(SPC), T(W), T(O), T(R), T(L), T(D), END);
                 break;
             case 1:
+                return MACRO(I(0), T(H), T(T), T(T), T(P), T(S), M_S(SCLN), T(SLSH), T(SLSH), T(A), T(M), T(A), T(Z), T(O), T(N), T(DOT), T(C), T(O), T(DOT), T(J), T(P), END);
                 break;
         }
   }
