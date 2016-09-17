@@ -4,6 +4,9 @@
 #include "sendchar.h"
 #include "virtser.h"
 
+// http://qiita.com/ReSTARTR/items/970354940f49c67fb9fd
+// https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
+
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
@@ -185,6 +188,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_TRNS
 ),
 };
+
+
 
 const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(SYMB)                // FN1 - Momentary Layer 1 (Symbols)
