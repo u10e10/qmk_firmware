@@ -104,41 +104,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 2: Media and mouse keys
  *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | RESET  |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |      |      | MsUp |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      |      |      |      |      |  Play  |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      | Prev | Next |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Lclk | Rclk |                                       |VolUp |VolDn | Mute |      |      |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |Brwser|
- *                                 |      |      |------|       |------|      |Back  |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
+ * ,--------------------------------------------------.     ,--------------------------------------------------.
+ * | RESET  |      |      |      |      |      |      |     |Sleep | Wake |      |      |      |PrtSc |        |
+ * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
+ * |        |      |WBack | MsUp | WFwd |      |      |     |      |      |VolDn | Mute |VolUp |      |        |
+ * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
+ * |        | Lclk |MsLeft|MsDown|MsRght| WhUp |------|     |------| Left | Down |  Up  | Right|      |        |
+ * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
+ * |        | Rclk |      |      |      | WhDn |      |     |      |      | Prev | Play | Next |      |        |
+ * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                 |      |      |      |      |        |
+ *   `----------------------------------'                                 `------------------------------------'
+ *                                      ,-------------.     ,-------------.
+ *                                      |      |      |     |      |      |
+ *                               ,------|------|------|     |------+------+------.
+ *                               |      |      |      |     |      |      |      |
+ *                               |      |      |------|     |------|      |      |
+ *                               |      |      |      |     |      |      |      |
+ *                               `--------------------'     `--------------------'
  */
 // MEDIA AND MOUSE
 [MDIA] = KEYMAP(
        RESET,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2,
+       KC_TRNS, KC_TRNS, KC_WBAK, KC_MS_U, KC_WFWD, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,
+       KC_TRNS, KC_BTN2, KC_TRNS, KC_TRNS, KC_TRNS, KC_WH_D, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MPLY,
-       KC_TRNS,  KC_TRNS, KC_TRNS, KC_MPRV, KC_MNXT, KC_TRNS, KC_TRNS,
-                          KC_VOLU, KC_VOLD, KC_MUTE, KC_TRNS, KC_TRNS,
+       KC_SLEP, KC_WAKE, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_VOLD, KC_MUTE, KC_VOLU, KC_TRNS, KC_TRNS,
+                KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_TRNS, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
