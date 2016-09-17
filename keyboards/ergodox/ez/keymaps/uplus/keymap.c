@@ -7,8 +7,10 @@
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
-#define TXBOLT 3 // TxBolt Steno Virtual Serial
-#define TXBOLT2 4 // TxBolt Steno Virtual Serial Alternative Layout
+#define LHND 3 // left hand layer
+
+// TxBolt Codes
+#define GRPMASK 0b11000000
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -139,118 +141,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_VOLU, KC_VOLD, KC_MUTE, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_WBAK
+       KC_TRNS, KC_TRNS, KC_TRNS
 ),
-// TxBolt Codes
-#define Sl 0b00000001
-#define Tl 0b00000010
-#define Kl 0b00000100
-#define Pl 0b00001000
-#define Wl 0b00010000
-#define Hl 0b00100000
-#define Rl 0b01000001
-#define Al 0b01000010
-#define Ol 0b01000100
-#define X  0b01001000
-#define Er 0b01010000
-#define Ur 0b01100000
-#define Fr 0b10000001
-#define Rr 0b10000010
-#define Pr 0b10000100
-#define Br 0b10001000
-#define Lr 0b10010000
-#define Gr 0b10100000
-#define Tr 0b11000001
-#define Sr 0b11000010
-#define Dr 0b11000100
-#define Zr 0b11001000
-#define NM 0b11010000
-#define GRPMASK 0b11000000
-#define GRP0 0b00000000
-#define GRP1 0b01000000
-#define GRP2 0b10000000
-#define GRP3 0b11000000
-/* Keymap 3: TxBolt (Serial)
+
+/* Keymap 3: Left hand layer
  *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | BKSPC  |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   #  |   #  |   #  |   #  |   #  |      |           |      |   #  |   #  |   #  |   #  |   #  |   #    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   S  |   T  |   P  |   H  |   *  |------|           |------|   *  |   F  |   P  |   L  |   T  |   D    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   S  |   K  |   W  |   R  |   *  |      |           |      |   *  |   R  |   B  |   G  |   S  |   Z    |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |                                       |      |      |      |      |      |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |      |
- *                                 |   A  |   O  |------|       |------|   E  |   U  |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
+ * ,--------------------------------------------------.     ,--------------------------------------------------.
+ * |        |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
+ * |        |  F7  |  F8  |  F9  | F10  | F11  | F12  |     |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |------|     |------|      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |     |      |      |      |      |      |      |        |
+ * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                 |      |      |      |      |      |
+ *   `----------------------------------'                                 `----------------------------------'
+ *                                      ,-------------.     ,-------------.
+ *                                      |      |      |     |      |      |
+ *                               ,------|------|------|     |------+------+------.
+ *                               |      |      |      |     |      |      |      |
+ *                               | PgUp | PgDn |------|     |------|      |      |
+ *                               |      |      |      |     |      |      |      |
+ *                               `--------------------'     `--------------------'
  */
-// TxBolt over Serial
-[TXBOLT] = KEYMAP(
-       KC_BSPC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   M(NM),   M(NM),   M(NM),   M(NM),   M(NM),  KC_NO,  
-       KC_NO,   M(Sl),   M(Tl),   M(Pl),   M(Hl),   M(X),
-       KC_NO,   M(Sl),   M(Kl),   M(Wl),   M(Rl),   M(X),   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                                           KC_NO,   KC_NO,  
-                                                    KC_NO,  
-                                  M(Al),   M(Ol),   KC_NO,  
-    // right hand
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_TRNS,  M(NM),   M(NM),   M(NM),   M(NM),   M(NM),   M(NM),
-                 M(X),    M(Fr),   M(Pr),   M(Lr),   M(Tr),   M(Dr),
-       KC_NO,    M(X),    M(Rr),   M(Br),   M(Gr),   M(Sr),   M(Zr),
-                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,  
-       KC_NO,  
-       KC_NO,   M(Er),   M(Ur)
-),
-/* Keymap 4: TxBolt (Serial) Alternative
- *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |   #  |   #  |   #  |   #  |   #  |      |           |      |   #  |   #  |   #  |   #  |   #  |   #    |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   S  |   T  |   P  |   H  |   *  |      |           |      |   *  |   F  |   P  |   L  |   T  |   D    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   S  |   K  |   W  |   R  |   *  |------|           |------|   *  |   R  |   B  |   G  |   S  |   Z    |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |   A  |   O  |                                       |   E  |   U  |      |      |      |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |      |
- *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
- */
-// TxBolt over Serial
-[TXBOLT2] = KEYMAP(
-       KC_NO,   M(NM),   M(NM),   M(NM),   M(NM),   M(NM),  KC_NO,  
-       KC_NO,   M(Sl),   M(Tl),   M(Pl),   M(Hl),   M(X),   KC_NO,  
-       KC_NO,   M(Sl),   M(Kl),   M(Wl),   M(Rl),   M(X),
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   M(Al),   M(Ol),
-                                           KC_NO,   KC_NO,  
-                                                    KC_NO,  
-                                  KC_NO,   KC_NO,   KC_NO,  
-    // right hand
-       KC_NO,    M(NM),   M(NM),   M(NM),   M(NM),   M(NM),   M(NM),
-       KC_TRNS,  M(X),    M(Fr),   M(Pr),   M(Lr),   M(Tr),   M(Dr),
-                 M(X),    M(Rr),   M(Br),   M(Gr),   M(Sr),   M(Zr),
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-                          M(Er),   M(Ur),   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,  
-       KC_NO,  
-       KC_NO,   KC_NO,   KC_NO
+// Left hand layer
+[LHND] = KEYMAP(
+       // left hand
+       KC_TRNS,   KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,     KC_F6,
+       KC_TRNS,   KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,    KC_F12,
+       KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
+       KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
+       KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
+                                                              KC_TRNS,   KC_TRNS,
+                                                                         KC_TRNS,
+                                                     KC_PGUP, KC_PGDN,   KC_TRNS,
+       // right hand
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+                M(0),    M(1),    KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+       KC_TRNS, KC_TRNS,
+       KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS
 ),
 };
 
@@ -286,9 +220,16 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
   // MACRODOWN only works in this function
 
-  if (record->event.pressed) {
-    uint8_t grp = (id & GRPMASK) >> 6;
-    chord[grp] |= id;
+    if (record->event.pressed) {
+        uint8_t grp = (id & GRPMASK) >> 6;
+        chord[grp] |= id;
+        switch(id){
+            case 0:
+                return MACRO(I(0), T(H), T(E), T(L), T(L), T(O), T(SPC), T(W), T(O), T(R), T(L), T(D), END);
+                break;
+            case 1:
+                break;
+        }
   }
   else {
     if (pressed_count == 0) {
