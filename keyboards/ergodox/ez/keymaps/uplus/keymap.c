@@ -166,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // right hand
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
-                M(0),    M(1),    KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+                M(0),    M(1),    M(2),    KC_TRNS,  KC_TRNS,  KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
        KC_TRNS, KC_TRNS,
@@ -219,6 +219,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                 break;
             case 1:
                 return MACRO(I(0), T(H), T(T), T(T), T(P), T(S), M_S(SCLN), T(SLSH), T(SLSH), T(A), T(M), T(A), T(Z), T(O), T(N), T(DOT), T(C), T(O), T(DOT), T(J), T(P), END);
+                break;
+            case 2:
+                return MACRO(I(0), T(H), T(T), T(T), T(P), M_S(SCLN), T(SLSH), T(SLSH), T(D), T(O), T(K), T(I), T(D), T(O), T(K), T(I), T(V), T(I), T(S), T(U), T(A), T(L), T(DOT), T(C), T(O), T(M), END);
                 break;
         }
   }
