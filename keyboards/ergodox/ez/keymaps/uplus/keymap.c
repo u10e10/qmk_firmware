@@ -30,9 +30,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   L3   |      |      |      |      |                                 |   (  |   )  |   [  |   ]  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     ,--------------.     ,--------------.
- *                                     |Eng/Alt| App  |     |      |Jpn/Alt|
+ *                                     |BS/Alt | Eng  |     | Jpn  |ESC/Alt|
  *                              ,------|-------|------|     |------+-------+-------.
- *                              |      |       | Del  |     |      | Alt/  |Enter/ |
+ *                              |      |       | Del  |     | App  | Alt/  |Enter/ |
  *                              |Space |LShift |------|     |------| Space |  L1   |
  *                              |      |       |  BS  |     | ESC  |       |       |
  *                              `---------------------'     `----------------------'
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,        KC_A,      KC_S,   KC_D,   KC_F,   KC_G,
     GUI_T(KC_ESC),  KC_Z,      KC_X,   KC_C,   KC_V,   KC_B,   KC_GRV,
     MO(LHND),       KC_NO,     KC_NO,  KC_NO,  KC_NO,
-                                               ALT_T(KC_LANG1),KC_APP,
+                                               ALT_T(KC_BSPC), KC_LANG1,
                                                                KC_DELT,
                                KC_SPC,         OSM(MOD_LSFT),  KC_BSPC,
 
@@ -54,8 +54,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_H,   KC_J,     KC_K,    KC_L,      LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
     KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,    CTL_T(KC_SLSH),   OSM(MOD_RSFT),
                          KC_LPRN,  KC_RPRN, KC_LBRC,   KC_RBRC,KC_NO,
-    KC_NO,       ALT_T(KC_LANG2),
-    KC_NO,
+    KC_LANG2,    ALT_T(KC_ESC),
+    KC_APP,
     KC_ESC,      ALT_T(KC_SPC),    LT(SYMB, KC_ENT)
     ),
 
