@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../config.h"
 
-#define ONESHOT_TIMEOUT 1000
+#define ONESHOT_TIMEOUT 4000
 
 
 /* USB Device descriptor parameter */
