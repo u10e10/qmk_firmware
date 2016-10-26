@@ -23,15 +23,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.     ,--------------------------------------------------.
  * |   L3   |   1  |   2  |   3  |   4  |   5  |      |     |      |   6  |   7  |   8  |   9  |   0  |        |
  * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
- * |Tab/Hyp |   Q  |   W  |   E  |   R  |   T  |      |     |  -   |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * |Tab/Hyp |   Q  |   W  |   E  |   R  |   T  |      |     |  -   |   Y  |   U  |   I  |   O  |   P  |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/ L2|   '    |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
- * |Esc/Gui |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl|   [    |
+ * |Esc/Gui |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl|   \    |
  * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
- * |   L3   |   `  |   (  |   )  | Eng  |                                 |  Jpn |   [  |   ]  | Gui  |   ]    |
+ * |   L3   |   `  |   (  |   )  | Eng  |                                 |  Jpn |   [  |   ]  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
- *                                     ,--------------.     ,--------------.
+ *                                     .--------------.     .--------------.
  *                                     |       |      |     | App  |ESC/Alt|
  *                              ,------|-------|------|     |------+-------+-------.
  *                              |      |       |  BS  |     | Del  |  L1/  | Alt/  |
@@ -52,11 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_SPC,         OSM(MOD_LSFT),  KC_LALT,
 
     KC_NO,       KC_6,   KC_7,     KC_8,    KC_9,      KC_0,             KC_NO,
-    KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,      KC_P,             KC_BSLS,
+    KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,      KC_P,             KC_NO,
                  KC_H,   KC_J,     KC_K,    KC_L,      LT(MDIA, KC_SCLN),KC_QUOT,
-    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,    CTL_T(KC_SLSH),   KC_LBRC,
-                         KC_LANG2, KC_LBRC, KC_RBRC,   KC_RGUI,          KC_RBRC,
-    KC_APP,       ALT_T(KC_ESC),
+    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,    CTL_T(KC_SLSH),   KC_BSLS,
+                         KC_LANG2, KC_LBRC, KC_RBRC,   KC_RGUI,          KC_NO,
+    KC_APP,      ALT_T(KC_ESC),
     KC_DELT,
     KC_ESC,      LT(SYMB, KC_SPC), ALT_T(KC_ENT)
     ),
