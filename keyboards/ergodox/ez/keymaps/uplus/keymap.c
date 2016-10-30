@@ -17,6 +17,10 @@
 // TxBolt Codes
 #define GRPMASK 0b11000000
 
+enum {
+  TD_ESC_LANG1 = 0
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
@@ -228,6 +232,13 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     }
   }
   return MACRO_NONE;
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Esc, twice for Caps Lock
+  [TD_ESC_LANG1] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_LANG1)
+// Other declarations would go here, separated by commas, if you have them
 };
 
 // Runs just one time when the keyboard initializes.
