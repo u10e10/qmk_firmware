@@ -13,7 +13,8 @@
 #define MISC 3 // left hand layer
 
 #define KC_DQUT RSFT(KC_QUOT)
-#define LT_S(key) LT(MISC, KC_##key)
+#define LT_2(key) LT(MDIA, KC_##key)
+#define LT_3(key) LT(MISC, KC_##key)
 #define H(key)  HYPR(KC_##key)
 #define G(key)  RGUI(KC_##key)
 #define CA(key) RCTL(RALT(KC_##key))
@@ -53,17 +54,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(MISC),       KC_1,      KC_2,   KC_3,   KC_4,   KC_5,   KC_NO,
     ALL_T(KC_TAB),  KC_Q,      KC_W,   KC_E,   KC_R,   KC_T,   KC_NO,
     KC_LCTL,        KC_A,      KC_S,   KC_D,   KC_F,   KC_G,
-    GUI_T(KC_ESC),  LT_S(Z),   KC_X,   KC_C,   KC_V,   KC_B,   KC_GRV,
+    GUI_T(KC_ESC),  LT_3(Z),   KC_X,   KC_C,   KC_V,   KC_B,   KC_GRV,
     KC_NO,          KC_GRV,    KC_LPRN,KC_RPRN,KC_LANG1,
                                                KC_NO,          KC_APP,
                                                                KC_BSPC,
                                KC_SPC,         OSM(MOD_LSFT),  KC_LALT,
 
-    KC_NO,       KC_6,   KC_7,     KC_8,    KC_9,      KC_0,             KC_NO,
-    KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,      KC_P,             KC_NO,
-                 KC_H,   KC_J,     KC_K,    KC_L,      LT(MDIA, KC_SCLN),LT_S(QUOT),
-    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,    CTL_T(KC_SLSH),   SFT_T(KC_BSLS),
-                         KC_LANG2, KC_LBRC, KC_RBRC,   KC_RGUI,          KC_NO,
+    KC_NO,       KC_6,   KC_7,     KC_8,    KC_9,    KC_0,           KC_NO,
+    KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,           KC_NO,
+                 KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
+    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
+                         KC_LANG2, KC_LBRC, KC_RBRC, KC_RGUI,        KC_NO,
     KC_NO,       ALT_T(KC_ESC),
     KC_DELT,
     KC_ESC,      LT(SYMB, KC_SPC), ALT_T(KC_ENT)
