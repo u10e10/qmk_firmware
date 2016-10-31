@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,       ALT_T(KC_ESC),
     KC_DELT,
     KC_LANG2,    LT(SYMB, KC_SPC), ALT_T(KC_ENT)
-    ),
+  ),
 
 
 /* Keymap 1: Symbol layer
@@ -82,24 +82,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
  */
 [SYMB] = KEYMAP(
-       KC_TRNS,   KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,     KC_TRNS,
-       KC_TRNS,   KC_EXLM,   KC_AT,     KC_LCBR,   KC_RCBR,   KC_PERC,   KC_TRNS,
-       KC_TRNS,   KC_CIRC,   KC_DLR,    KC_LPRN,   KC_RPRN,   KC_TILD,
-       KC_TRNS,   KC_BSPC,   KC_DELT,   KC_LBRC,   KC_RBRC,   KC_NO,     KC_TRNS,
-       KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
-                                                              KC_TRNS,   KC_TRNS,
-                                                                         KC_TRNS,
-                                                     KC_TRNS, KC_TRNS,   KC_TRNS,
+    KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   KC_TRNS,
+    KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR,  KC_PERC, KC_TRNS,
+    KC_TRNS, KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN,  KC_TILD,
+    KC_TRNS, KC_BSPC, KC_DELT, KC_LBRC, KC_RBRC,  KC_NO,   KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                                  KC_TRNS, KC_TRNS,
+                                                           KC_TRNS,
+                                        KC_TRNS,  KC_TRNS, KC_TRNS,
 
-       KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,   KC_F12,
-       KC_TRNS, KC_CIRC, KC_AMPR, KC_BSPC, KC_DELT,  KC_NO,    KC_F11,
-                KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN,  KC_DQUO,
-       KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_QUES,  KC_PIPE,
-                         KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
-       KC_TRNS, KC_TRNS,
-       KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS
-),
+    KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F12,
+    KC_TRNS, KC_CIRC, KC_AMPR, KC_BSPC, KC_DELT,  KC_NO,   KC_F11,
+             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN, KC_DQUO,
+    KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_QUES, KC_PIPE,
+                      KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS,
+    KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS
+  ),
 
 
 /* Keymap 2: Media and Mousekey layer
