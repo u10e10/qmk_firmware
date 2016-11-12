@@ -72,9 +72,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 1: Symbol layer
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |        |  F1  |  F2  |  F3  |  F4  |  F5  |      |     |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F12  |
+ * |        |  F1  |  F2  |  F3  |  F4  |  F5  |      |     |      |  F6  |  F7  |  F8  |  F9  | F10  |        |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
- * |        |   !  |   @  |   {  |   }  |   %  |      |     |  _   |   ^  |  &   |  BS  | DEL  |      |   F11  |
+ * |        |   !  |   @  |   {  |   }  |   %  |      |     |  _   |   ^  |  &   |  BS  | DEL  | F11  |  F12   |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |        |   ^  |   $  |   (  |   )  |   ~  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
  * |--------+------+------+------+------+------|  ~   |     |  +   |------+------+------+------+------+--------|
@@ -91,8 +91,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                            KC_TRNS,
                                         KC_TRNS,  KC_TRNS, KC_TRNS,
 
-    KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F12,
-    KC_UNDS, KC_CIRC, KC_AMPR, KC_BSPC, KC_DELT,  KC_NO,   KC_F11,
+    KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_NO,
+    KC_UNDS, KC_CIRC, KC_AMPR, KC_BSPC, KC_DELT,  KC_F11,  KC_F12,
              KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN, KC_DQUO,
     KC_PLUS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_QUES, KC_PIPE,
                       KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
