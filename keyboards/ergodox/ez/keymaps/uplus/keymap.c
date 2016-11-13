@@ -4,6 +4,21 @@
 #include "sendchar.h"
 #include "virtser.h"
 
+void backlight_toggle(void){
+  // static int flag=0;
+  // if(!flag) ergodox_led_all_on();
+  // else ergodox_led_all_off();
+  // flag = !flag;
+}
+
+enum planck_keycodes {
+  QWERTY = SAFE_RANGE,
+  DYNAMIC_MACRO_RANGE,
+};
+
+#define _DYN 3
+#include "dynamic_macro.h"
+
 // http://qiita.com/ReSTARTR/items/970354940f49c67fb9fd
 // https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
 // /quantum/keymap.h
@@ -19,6 +34,8 @@
 #define G(key)  RGUI(KC_##key)
 #define CA(key) RCTL(RALT(KC_##key))
 
+#define DYN_REC1 DYN_REC_START1
+#define DYN_PLY1 DYN_MACRO_PLAY1
 // TxBolt Codes
 #define GRPMASK 0b11000000
 
@@ -29,7 +46,7 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   L3   |   1  |   2  |   3  |   4  |   5  |      |     |      |   6  |   7  |   8  |   9  |   0  |        |
+ * |   L3   |   1  |   2  |   3  |   4  |   5  |      |     |DYN_R1|   6  |   7  |   8  |   9  |   0  | DYN_P1 |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
  * |Tab/Hyp |   Q  |   W  |   E  |   R  |   T  |  BS  |     |  -   |   Y  |   U  |   I  |   O  |   P  |   `    |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
@@ -59,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                KC_APP,
                                        KC_SPC,  OSM(MOD_LSFT), KC_LALT,
 
-    KC_NO,       KC_6,   KC_7,     KC_8,    KC_9,    KC_0,           KC_NO,
+    DYN_REC1,    KC_6,   KC_7,     KC_8,    KC_9,    KC_0,           DYN_PLY1,
     KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,           KC_GRV,
                  KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
     KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
@@ -186,6 +203,9 @@ void send_chord(void)
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
+  if(!process_record_dynamic_macro(keycode, record)) {
+    return false;
+  }
   // We need to track keypresses in all modes, in case the user
   // changes mode whilst pressing other keys.
   if (record->event.pressed)
@@ -245,15 +265,15 @@ void matrix_scan_user(void) {
     ergodox_right_led_2_off();
     ergodox_right_led_3_off();
     switch (layer) {
-      // TODO: Make this relevant to the ErgoDox EZ.
         case 1:
             ergodox_right_led_2_on();
             break;
         case 2:
             ergodox_right_led_3_on();
             break;
+        case 3:
+            ergodox_right_led_1_on();
         default:
-            // none
             break;
     }
 
