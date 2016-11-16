@@ -57,14 +57,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
  * |Esc/Gui | Z/L3 |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl| \/SFT  |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
- * |        | Del  |      |   (  |   )  |                                 |   [  |   ]  |      | Gui  |        |
+ * |        | Del  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
  *                                     |  Eng  |AltF4 |     | Play |  Jpn  |
  *                              ,------|-------|------|     |------|-------|-------.
  *                              |      |       | App  |     | Del  |  L1/  | Alt/  |
  *                              |Space | Shift |------|     |------| Space | Enter |
- *                              |      |       | Alt  |     | Jpn  |       |       |
+ *                              |      |       | Alt  |     |  L1  |       |       |
  *                              `---------------------'     `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -83,10 +83,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,           KC_GRV,
                  KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
     KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
-                         KC_LBRC,  KC_RBRC, XXXXXXX, KC_RGUI,        XXXXXXX,
+                         KC_LBRC,  KC_RBRC, KC_RALT, KC_RGUI,        XXXXXXX,
     KC_MPLY,     KC_LANG2,
     KC_DELT,
-    KC_LANG2,    LT(SYMB, KC_SPC), ALT_T(KC_ENT)
+    MO(SYMB),    LT(SYMB, KC_SPC), ALT_T(KC_ENT)
   ),
 
 
