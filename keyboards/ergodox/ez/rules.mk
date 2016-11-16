@@ -5,7 +5,7 @@
 #
 # make clean = Clean out built project files.
 #
-# That's pretty much all you need. To compile, always go make clean, 
+# That's pretty much all you need. To compile, always go make clean,
 # followed by make.
 #
 # For advanced users only:
@@ -72,6 +72,8 @@ OPT_DEFS += -DBOOTLOADER_SIZE=512
 #
 
 SLEEP_LED_ENABLE = no
+VIRTSER_ENABLE = yes
+TAP_DANCE_ENABLE = yes
 
 ifndef QUANTUM_DIR
 	include ../../../Makefile
