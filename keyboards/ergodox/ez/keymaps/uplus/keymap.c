@@ -98,14 +98,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |        |   ^  |   $  |   (  |   )  |   ~  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
  * |--------+------+------+------+------+------|  ~   |     |  +   |------+------+------+------+------+--------|
- * |        |  BS  | DEL  |   [  |   ]  |      |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
+ * |        |  BS  | DEL  |   [  |   ]  | M(3) |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
  * `--------------------------------------------------'     `--------------------------------------------------'
  */
 [SYMB] = KEYMAP(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   _______,
     _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR,  KC_PERC, _______,
     _______, KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN,  KC_TILD,
-    _______, KC_BSPC, KC_DELT, KC_LBRC, KC_RBRC,  XXXXXXX, KC_TILD,
+    _______, KC_BSPC, KC_DELT, KC_LBRC, KC_RBRC,  M(3), KC_TILD,
     _______, _______, _______, _______, _______,
                                                   _______, _______,
                                                            _______,
@@ -229,13 +229,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         switch(id){
             case 0:
                 return MACRO(I(0), T(H), T(E), T(L), T(L), T(O), T(SPC), T(W), T(O), T(R), T(L), T(D), END);
-                break;
             case 1:
                 return MACRO(I(0), T(H), T(T), T(T), T(P), T(S), M_S(SCLN), T(SLSH), T(SLSH), T(A), T(M), T(A), T(Z), T(O), T(N), T(DOT), T(C), T(O), T(DOT), T(J), T(P), END);
-                break;
             case 2:
                 return MACRO(I(0), T(H), T(T), T(T), T(P), M_S(SCLN), T(SLSH), T(SLSH), T(D), T(O), T(K), T(I), T(D), T(O), T(K), T(I), T(V), T(I), T(S), T(U), T(A), T(L), T(DOT), T(C), T(O), T(M), END);
-                break;
+            case 3: // "${}"
+                return MACRO(I(0), M_S(QUOT), M_S(4), M_S(LBRC), END);
         }
   }
   else {
