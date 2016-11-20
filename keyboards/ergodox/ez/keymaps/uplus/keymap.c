@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |        | Del  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
- *                                     |  Eng  | Play |     |AltF4 |  Jpn  |
+ *                                     |  Eng  | Play |     |      |  Jpn  |
  *                              ,------|-------|------|     |------|-------|-------.
  *                              |      |       | App  |     |  Jpn |       | Alt/  |
  *                              |  L1  | Shift |------|     |------| Space | Enter |
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
     KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
                          KC_LBRC,  KC_RBRC, KC_RALT, KC_RGUI,        XXXXXXX,
-    RALT(KC_F4), KC_LANG2,
+    KC_NO,       KC_LANG2,
     KC_LANG2,
     KC_LANG2,    KC_SPC, ALT_T(KC_ENT)
   ),
@@ -94,18 +94,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.     ,--------------------------------------------------.
  * |        |  F1  |  F2  |  F3  |  F4  |  F5  |      |     |      |  F6  |  F7  |  F8  |  F9  | F10  |        |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
- * |        |   !  |   @  |   {  |   }  |   %  |      |     |  _   |   ^  |  &   |  -   |  =   | F11  |  F12   |
+ * |        |   !  |   @  |   [  |   ]  |   %  |      |     |  _   |   ^  |  &   |  -   |  =   | F11  |  F12   |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |  BS  | DEL  |   (  |   )  |   `  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
+ * |        |  BS  | DEL  |   {  |   }  |   `  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
  * |--------+------+------+------+------+------|  ~   |     |  +   |------+------+------+------+------+--------|
- * |        |   ^  |   $  |   [  |   ]  |   ~  |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
+ * |        |   ^  |   $  |   (  |   )  |   ~  |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
  * `--------------------------------------------------'     `--------------------------------------------------'
  */
 [SYMB] = KEYMAP(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   _______,
-    _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR,  KC_PERC, _______,
-    _______, KC_BSPC, KC_DELT, KC_LPRN, KC_RPRN,  KC_GRV,
-    _______, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC,  KC_TILD, KC_TILD,
+    _______, KC_EXLM, KC_AT,   KC_LBRC, KC_RBRC,  KC_PERC, _______,
+    _______, KC_BSPC, KC_DELT, KC_LCBR, KC_RCBR,  KC_GRV,
+    _______, KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN,  KC_TILD, KC_TILD,
     _______, _______, _______, _______, _______,
                                                   _______, _______,
                                                            _______,
