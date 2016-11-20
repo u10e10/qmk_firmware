@@ -60,11 +60,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |        | Del  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
- *                                     |  Eng  |AltF4 |     | Play |  Jpn  |
+ *                                     |  Eng  | Play |     |AltF4 |  Jpn  |
  *                              ,------|-------|------|     |------|-------|-------.
- *                              |      |       | App  |     |  L1  |  L1/  | Alt/  |
- *                              |Space | Shift |------|     |------| Space | Enter |
- *                              |      |       | Alt  |     |  L1  |       |       |
+ *                              |      |       | App  |     |  Jpn |       | Alt/  |
+ *                              |  L1  | Shift |------|     |------| Space | Enter |
+ *                              |      |       | Alt  |     |  Jpn |       |       |
  *                              `---------------------'     `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -75,18 +75,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,        KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
     GUI_T(KC_ESC),  LT_3(Z),  KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
     XXXXXXX,        KC_DELT,  XXXXXXX, KC_LPRN, KC_RPRN,
-                                                KC_LANG1,      LALT(KC_F4),
+                                                KC_LANG1,      KC_MPLY,
                                                                KC_APP,
-                                       KC_SPC,  OSM(MOD_LSFT), KC_LALT,
+                                       MO(SYMB),OSM(MOD_LSFT), KC_LALT,
 
     DYN_PLY1,    KC_6,   KC_7,     KC_8,    KC_9,    KC_0,           XXXXXXX,
     KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,           KC_GRV,
                  KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
     KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
                          KC_LBRC,  KC_RBRC, KC_RALT, KC_RGUI,        XXXXXXX,
-    KC_MPLY,     KC_LANG2,
-    MO(SYMB),
-    MO(SYMB),    LT(SYMB, KC_SPC), ALT_T(KC_ENT)
+    RALT(KC_F4), KC_LANG2,
+    KC_LANG2,
+    KC_LANG2,    KC_SPC, ALT_T(KC_ENT)
   ),
 
 
@@ -94,25 +94,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.     ,--------------------------------------------------.
  * |        |  F1  |  F2  |  F3  |  F4  |  F5  |      |     |      |  F6  |  F7  |  F8  |  F9  | F10  |        |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
- * |        |   !  |   @  |   {  |   }  |   %  |      |     |  _   |   ^  |  &   |  BS  | DEL  | F11  |  F12   |
+ * |        |   !  |   @  |   {  |   }  |   %  |      |     |  _   |   ^  |  &   |  -   |  =   | F11  |  F12   |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |   ^  |   $  |   (  |   )  |   ~  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
+ * |        |  BS  | DEL  |   (  |   )  |   `  |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
  * |--------+------+------+------+------+------|  ~   |     |  +   |------+------+------+------+------+--------|
- * |        |  BS  | DEL  |   [  |   ]  | M(3) |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
+ * |        |   ^  |   $  |   [  |   ]  |   ~  |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
  * `--------------------------------------------------'     `--------------------------------------------------'
  */
 [SYMB] = KEYMAP(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   _______,
     _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR,  KC_PERC, _______,
-    _______, KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN,  KC_TILD,
-    _______, KC_BSPC, KC_DELT, KC_LBRC, KC_RBRC,  M(3), KC_TILD,
+    _______, KC_BSPC, KC_DELT, KC_LPRN, KC_RPRN,  KC_GRV,
+    _______, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC,  KC_TILD, KC_TILD,
     _______, _______, _______, _______, _______,
                                                   _______, _______,
                                                            _______,
                                         _______,  _______, _______,
 
     _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  XXXXXXX,
-    KC_UNDS, KC_CIRC, KC_AMPR, KC_BSPC, KC_DELT,  KC_F11,  KC_F12,
+    KC_UNDS, KC_CIRC, KC_AMPR, KC_MINS, KC_EQL,   KC_F11,  KC_F12,
              KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN, KC_DQUO,
     KC_PLUS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_QUES, KC_PIPE,
                       _______, _______, _______,  _______, _______,
