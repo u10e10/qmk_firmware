@@ -33,6 +33,7 @@ enum planck_keycodes {
 #define H(key)  HYPR(KC_##key)
 #define G(key)  RGUI(KC_##key)
 #define CA(key) RCTL(RALT(KC_##key))
+#define GA(key) RGUI(RALT(KC_##key))
 
 #define DYN_REC1 DYN_REC_START1
 #define DYN_PLY1 DYN_MACRO_PLAY1
@@ -154,15 +155,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 
-/* Keymap 3: Misc layer
+/* Keymap 3: Misc layer(Right hand keys for window control)
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      |      |      |      |      |      |        |
+ * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      | M(0) | M(1) | M(2) |      |      |        |
  * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
  * |        |  F7  |  F8  |  F9  | F10  | F11  | F12  |     |      |CA_Lft|CA_Dwn|CA_Up |CA_Rht|      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |      |      | PgUp |Enter |      |------|     |------|G_Lft |G_Dwn | G_Up |G_Rht |      |   **   |
+ * |        |      |      | PgUp |Enter |      |------|     |------|GA_Lft|GA_Dwn|GA_Up |GA_Rht|      |   **   |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |  **  | Play | PgDn |WBack | WFwd |      |     |      | M(0) | M(1) | M(2) |      |      |        |
+ * |        |  **  | Play | PgDn |WBack | WFwd |      |     |      |G_Lft |G_Dwn | G_Up |G_Rht |      |        |
  * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
  */
 [MISC] = KEYMAP(
@@ -175,10 +176,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                              _______,
                                            _______, _______, _______,
 
-       _______, _______, _______, _______, _______, _______, _______,
-       _______, CA(LEFT),CA(DOWN),CA(UP),  CA(RGHT),_______, _______,
-                G(LEFT), G(DOWN), G(UP),   G(RGHT), _______, _______,
        _______, M(0),    M(1),    M(2),    _______, _______, _______,
+       _______, CA(LEFT),CA(DOWN),CA(UP),  CA(RGHT),_______, _______,
+                GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),_______, _______,
+       _______, G(LEFT), G(DOWN), G(UP),   G(RGHT), _______, _______,
                          _______, _______, _______, _______, _______,
        _______, _______,
        _______,
