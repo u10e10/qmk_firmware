@@ -56,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/ L2| '/L3   |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
- * |Esc/Gui | Z/L3 |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl| \/SFT  |
+ * |Esc/L3  |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl| \/SFT  |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
- * |        | Del  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
+ * |        | Gui  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
  *                                     |  Eng  | Play |     |      |  Jpn  |
@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(MISC),       KC_1,     KC_2,    KC_3,    KC_4,   KC_5,  DYN_REC1,
     ALL_T(KC_TAB),  KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_BSPC,
     KC_LCTL,        KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
-    GUI_T(KC_ESC),  LT_3(Z),  KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
-    XXXXXXX,        KC_DELT,  XXXXXXX, KC_LPRN, KC_RPRN,
+    LT_3(ESC),      KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
+    XXXXXXX,        KC_LGUI,  KC_DELT, KC_LPRN, KC_RPRN,
                                                 KC_LANG1,      KC_MPLY,
                                                                KC_APP,
                                        MO(SYMB),OSM(MOD_LSFT), KC_LALT,
