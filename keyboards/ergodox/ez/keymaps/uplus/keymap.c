@@ -54,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
  * |Tab/Hyp |   Q  |   W  |   E  |   R  |   T  |  BS  |     |  -   |   Y  |   U  |   I  |   O  |   P  |   `    |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/ L2| '/L3   |
+ * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/L2 | '/Ctrl |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
- * |Esc/L3  |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |//Ctrl| \/SFT  |
+ * |Esc/L3  |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  | \/SFT  |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
  * |        | Gui  |      |   (  |   )  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
@@ -82,8 +82,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     DYN_PLY1,    KC_6,   KC_7,     KC_8,    KC_9,    KC_0,           XXXXXXX,
     KC_MINS,     KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,           KC_GRV,
-                 KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     LT_3(QUOT),
-    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_BSLS),
+                 KC_H,   KC_J,     KC_K,    KC_L,    LT_2(SCLN),     CTL_T(KC_QUOT),
+    KC_EQL,      KC_N,   KC_M,     KC_COMM, KC_DOT,  KC_SLSH,        SFT_T(KC_BSLS),
                          KC_LBRC,  KC_RBRC, KC_RALT, KC_RGUI,        XXXXXXX,
     KC_NO,       KC_LANG2,
     KC_LANG2,
@@ -161,9 +161,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
  * |        |  F7  |  F8  |  F9  | F10  | F11  | F12  |     |      |CA_Lft|CA_Dwn|CA_Up |CA_Rht|      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |      |      | PgUp |Enter |      |------|     |------|GA_Lft|GA_Dwn|GA_Up |GA_Rht|      |   **   |
+ * |        |      |      | PgUp |Enter |      |------|     |------|GA_Lft|GA_Dwn|GA_Up |GA_Rht|      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |  **  | Play | PgDn |WBack | WFwd |      |     |      |G_Lft |G_Dwn | G_Up |G_Rht |      |        |
+ * |   **   |      | Play | PgDn |WBack | WFwd |      |     |      |G_Lft |G_Dwn | G_Up |G_Rht |      |        |
  * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
  */
 [MISC] = KEYMAP(
