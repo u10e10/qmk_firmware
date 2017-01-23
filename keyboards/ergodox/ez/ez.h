@@ -30,6 +30,9 @@ void ergodox_blink_all_leds(void);
 uint8_t init_mcp23018(void);
 uint8_t ergodox_left_leds_update(void);
 
+#define ONESHOT_TIMEOUT 4000
+#undef LED_BRIGHTNESS_LO
+#undef LED_BRIGHTNESS_HI
 #define LED_BRIGHTNESS_LO       1
 #define LED_BRIGHTNESS_HI       1
 

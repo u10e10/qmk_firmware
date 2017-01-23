@@ -19,10 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef ERGODOX_EZ_CONFIG_H
 #define ERGODOX_EZ_CONFIG_H
 
+#include "config_common.h"
 #include "../config.h"
-
-#define ONESHOT_TIMEOUT 4000
-
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
@@ -40,9 +38,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BACKLIGHT_LEVELS 3
 
 
+/* ws2812 RGB LED */
+#define RGB_DI_PIN D7
+#define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 15     // Number of LEDs
+#define RGBLIGHT_HUE_STEP 12
+#define RGBLIGHT_SAT_STEP 255
+#define RGBLIGHT_VAL_STEP 12
+
+#define RGB_MIDI
+#define RGBW_BB_TWI
+
+#define RGBW 1
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    5
+
+#define USB_MAX_POWER_CONSUMPTION 500
 
 /*
  * Feature disable options
