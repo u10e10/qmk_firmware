@@ -230,6 +230,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     pressed_count++;
   else
     pressed_count--;
+
+  // finish if return false
+  if(record->event.pressed){
+    switch(keycode){
+      case RESET:
+        ergodox_led_all_on();
+        return true;
+    }
+  }
+
   return true;
 }
 
