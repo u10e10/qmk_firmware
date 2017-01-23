@@ -29,6 +29,10 @@ enum planck_keycodes {
 #define MDIA 2 // media keys
 #define MISC 3 // left hand layer
 
+#define M_HW 0
+#define M_AMA 1
+#define M_DKV 2
+
 #define LOCK RGUI(KC_L)
 #define LT_2(key) LT(MDIA, KC_##key)
 #define LT_3(key) LT(MISC, KC_##key)
@@ -58,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |Ent/Alt |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/L2 | '/Ctrl |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
- * |Esc/L3  |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  | \/SFT  |
+ * | Esc/L3 |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  | \/SFT  |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
  * |        | Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
@@ -161,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 3: Misc layer(Right hand keys for window control)
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      | M(0) | M(1) | M(2) |      |      |        |
+ * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      |M(HW) |M(AMA)|M(DKV)|      |      |        |
  * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
  * |        |  F7  |  F8  |  F9  | F10  | F11  | F12  |     |      |CA_Lft|CA_Dwn|CA_Up |CA_Rht|      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
@@ -180,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                              _______,
                                            _______, _______, _______,
 
-       _______, M(0),    M(1),    M(2),    _______, _______, _______,
+       _______, M(M_HW), M(M_AMA),M(M_DKV),_______, _______, _______,
        _______, CA(LEFT),CA(DOWN),CA(UP),  CA(RGHT),_______, _______,
                 GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),_______, _______,
        _______, G(LEFT), G(DOWN), G(UP),   G(RGHT), _______, _______,
@@ -211,12 +215,12 @@ void send_chord(void)
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
-  if(!process_record_dynamic_macro(keycode, record)) {
+  if(!process_record_dynamic_macro(keycode, record))
     return false;
-  }
+
   // We need to track keypresses in all modes, in case the user
   // changes mode whilst pressing other keys.
-  if (record->event.pressed)
+  if(record->event.pressed)
     pressed_count++;
   else
     pressed_count--;
@@ -231,14 +235,14 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     uint8_t grp = (id & GRPMASK) >> 6;
     chord[grp] |= id;
 
-    switch(id) {
-      case 0:
+    switch(id){
+      case M_HW:
         SEND_STRING("Hello World");
         break;
-      case 1:
+      case M_AMA:
         SEND_STRING("https://amazon.co.jp");
         break;
-      case 2:
+      case M_DKV:
         SEND_STRING("http://dokidokivisual.com");
         break;
     }
