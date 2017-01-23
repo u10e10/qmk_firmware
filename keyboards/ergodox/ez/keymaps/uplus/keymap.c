@@ -19,6 +19,7 @@ enum planck_keycodes {
 #define _DYN 3
 #include "dynamic_macro.h"
 
+// 押下時間で処理を分ける http://qiita.com/teri_yakichan/items/db54589b67ba9330faed
 // http://qiita.com/ReSTARTR/items/970354940f49c67fb9fd
 // https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
 // /quantum/keymap.h
@@ -226,22 +227,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
   // MACRODOWN only works in this function
+  if(record->event.pressed){
+    uint8_t grp = (id & GRPMASK) >> 6;
+    chord[grp] |= id;
 
-    if (record->event.pressed) {
-        uint8_t grp = (id & GRPMASK) >> 6;
-        chord[grp] |= id;
-        switch(id){
-            case 0:
-                return MACRO(I(0), T(H), T(E), T(L), T(L), T(O), T(SPC), T(W), T(O), T(R), T(L), T(D), END);
-            case 1:
-                return MACRO(I(0), T(H), T(T), T(T), T(P), T(S), M_S(SCLN), T(SLSH), T(SLSH), T(A), T(M), T(A), T(Z), T(O), T(N), T(DOT), T(C), T(O), T(DOT), T(J), T(P), END);
-            case 2:
-                return MACRO(I(0), T(H), T(T), T(T), T(P), M_S(SCLN), T(SLSH), T(SLSH), T(D), T(O), T(K), T(I), T(D), T(O), T(K), T(I), T(V), T(I), T(S), T(U), T(A), T(L), T(DOT), T(C), T(O), T(M), END);
-            case 3: // "${}"
-                return MACRO(I(0), M_S(QUOT), M_S(4), M_S(LBRC), END);
-        }
-  }
-  else {
+    switch(id) {
+      case 0:
+        SEND_STRING("Hello World");
+      case 1:
+        SEND_STRING("https://amazon.co.jp");
+      case 2:
+        SEND_STRING("http://dokidokivisual.com");
+    }
+  } else {
     if (pressed_count == 0) {
       send_chord();
       chord[0] = chord[1] = chord[2] = chord[3] = 0;
@@ -264,10 +262,10 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
     uint8_t layer = biton32(layer_state);
-    ergodox_board_led_off();
-    ergodox_right_led_1_off();
-    ergodox_right_led_2_off();
-    ergodox_right_led_3_off();
+    // ergodox_board_led_off();
+    // ergodox_right_led_1_off();
+    // ergodox_right_led_2_off();
+    // ergodox_right_led_3_off();
     switch (layer) {
         case 1:
             ergodox_right_led_1_on();
