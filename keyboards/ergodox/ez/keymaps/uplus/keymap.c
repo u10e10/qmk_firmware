@@ -234,10 +234,13 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     switch(id) {
       case 0:
         SEND_STRING("Hello World");
+        break;
       case 1:
         SEND_STRING("https://amazon.co.jp");
+        break;
       case 2:
         SEND_STRING("http://dokidokivisual.com");
+        break;
     }
   } else {
     if (pressed_count == 0) {
