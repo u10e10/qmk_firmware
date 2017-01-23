@@ -173,5 +173,5 @@ uint16_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
 __attribute__ ((weak))
 uint16_t keymap_function_id_to_action( uint16_t function_id )
 {
-	return pgm_read_word(&fn_actions[function_id]);
+	return pgm_read_word(fn_actions+function_id);
 }
