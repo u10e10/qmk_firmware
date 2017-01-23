@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |Ent/Alt |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  | ;/L2 | '/Ctrl |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
- * |  Esc   |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  | \/SFT  |
+ * |Esc/L3  |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  | \/SFT  |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
  * |        | Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(MISC),       KC_1,     KC_2,    KC_3,    KC_4,   KC_5,  DYN_REC1,
     KC_TAB,         KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_TAB,
     ALT_T(KC_ENT),  KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
-    KC_ESC,         KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
+    LT_3(ESC),      KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
     XXXXXXX,        KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
                                                 KC_LANG1,      KC_MPLY,
                                                                KC_LANG1,
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |        |  BS  | DEL  |WBack | PgUp | WFwd |------|     |------|GA_Lft|GA_Dwn|GA_Up |GA_Rht|      |        |
  * |--------+------+------+------+------+------|AltF4 |     |      |------+------+------+------+------+--------|
- * |        | Prev | Play | Next | PgDn |      |      |     |      |G_Lft |G_Dwn | G_Up |G_Rht |      |        |
+ * |   **   | Prev | Play | Next | PgDn |      |      |     |      |G_Lft |G_Dwn | G_Up |G_Rht |      |        |
  * `--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------'
  */
 [MISC] = KEYMAP(
