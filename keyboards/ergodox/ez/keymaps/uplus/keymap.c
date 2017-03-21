@@ -11,6 +11,7 @@ void backlight_toggle(void){
   // flag = !flag;
 }
 
+// for dynamic macro
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   DYNAMIC_MACRO_RANGE,
@@ -54,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.     ,--------------------------------------------------.
  * |   L3   |   1  |   2  |   3  |   4  |   5  |DYN_R1|     |DYN_P1|   6  |   7  |   8  |   9  |   0  |        |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
- * | Enter  |   Q  |   W  |   E  |   R  |   T  | TAB  |     |      |   Y  |   U  |   I  |   O  |   P  |   -    |
+ * |        |   Q  |   W  |   E  |   R  |   T  | TAB  |     |      |   Y  |   U  |   I  |   O  |   P  |   -    |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * | Enter  |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  |   ;  |  '/L2  |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
@@ -74,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
   [BASE] = KEYMAP(  // layer 0 : default
       MO(MISC),       KC_1,     KC_2,    KC_3,    KC_4,   KC_5,  DYN_REC1,
-      KC_ENT,         KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_TAB,
+      XXXXXXX,        KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_TAB,
       KC_ENT,         KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
       KC_ESC,         KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
       XXXXXXX,        KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
@@ -99,18 +100,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
  * |        |  !   |  @   |  #   |  $   |  %   |      |     |  _   |  ^   |  &   |  *   |  (   |  )   |  F11   |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
- * |        |  BS  |      | DEL  |      |  ~   |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
+ * |        |  BS  |      | DEL  | CA_T |  ~   |------|     |------| Left | Down |  Up  | Right|  :   |   "    |
  * |--------+------+------+------+------+------|  ~   |     |  +   |------+------+------+------+------+--------|
- * |        |   ^  |   $  |   [  |   ]  |      |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
+ * |        |      |      | CA_D | CA_Y | CA_F |      |     |      | Home | PgDn | PgUp | End  |  ?   |   |    |
  * `--------------------------------------------------'     `--------------------------------------------------'
  */
   [SYMB] = KEYMAP(
       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   _______,
       _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, _______,
-      _______, KC_BSPC, XXXXXXX, KC_DELT, XXXXXXX,  KC_TILD,
-      _______, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC,  XXXXXXX,  KC_TILD,
+      _______, KC_BSPC, XXXXXXX, KC_DELT, CA(T),    KC_TILD,
+      _______, XXXXXXX, XXXXXXX, CA(D),   CA(Y),    CA(F),   KC_TILD,
       _______, _______, _______, _______, _______,
-                _______, _______,
+               _______, _______,
                          _______,
       _______,  _______, _______,
 
