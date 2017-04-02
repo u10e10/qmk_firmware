@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * |        | Lclk |MsLeft|MsDown|MsRght| WhUp |------|     |------| H_A  | H_B  | H_C  | H_D  |  **  |        |
  * |--------+------+------+------+------+------|      |     | H_G  |------+------+------+------+------+--------|
- * |        | Rclk |WhLeft|      |WhRght|WhDown|      |     |      |      | Prev | Play | Next |      |        |
+ * |        | Rclk |WhLeft| App  |WhRght|WhDown|      |     |      |      | Prev | Play | Next |      |        |
  * `--------------------------------------------------'     `--------------------------------------------------'
  *                                                          .-------------.
  *                                                          | ACL0 | ACL0 |
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       RESET,   _______, _______, _______, _______, _______, _______,
       _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(M),    G(R),
       _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,
-      _______, KC_BTN2, KC_WH_L, _______, KC_WH_R, KC_WH_D, _______,
+      _______, KC_BTN2, KC_WH_L, KC_APP,  KC_WH_R, KC_WH_D, _______,
       _______, _______, _______, _______, _______,
       _______, _______,
       _______,
