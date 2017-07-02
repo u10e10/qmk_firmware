@@ -53,9 +53,9 @@ enum planck_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   L3   |   1  |   2  |   3  |   4  |   5  |DYN_R1|     |DYN_P1|   6  |   7  |   8  |   9  |   0  |        |
+ * |   L3   |   1  |   2  |   3  |   4  |   5  |DYN_R1|     |      |   6  |   7  |   8  |   9  |   0  | DYN_P1 |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
- * |        |   Q  |   W  |   E  |   R  |   T  | TAB  |     |      |   Y  |   U  |   I  |   O  |   P  |   -    |
+ * |        |   Q  |   W  |   E  |   R  |   T  | TAB  |     |  -   |   Y  |   U  |   I  |   O  |   P  |   -    |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
  * | Enter  |   A  |   S  |   D  |   F  |   G  |------|     |------|   H  |   J  |   K  |   L  |   ;  |  '/L2  |
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               KC_LANG1,
       KC_LCTL, OSM(MOD_LSFT), KC_LANG1,
 
-      DYN_PLY1,    KC_6,   KC_7,    KC_8,    KC_9,    KC_0,     XXXXXXX,
+      XXXXXXX,     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,     DYN_PLY1,
       KC_MINS,     KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,     KC_MINS,
                    KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,  LT_2(QUOT),
       KC_EQL,      KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
