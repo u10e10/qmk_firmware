@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                     |  Eng  | Play |     |  App |  Jpn  |
  *                              ,------|-------|------|     |------|-------|-------.
  *                              |      |       | Eng  |     |  Jpn |       |       |
- *                              | Ctrl | Shift |------|     |------| Space |   L2  |
+ *                              | Ctrl | Shift |------|     |------|  L2   | Space |
  *                              |      |       | Eng  |     |  Jpn |       |       |
  *                              `---------------------'     `----------------------'
  */
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_LBRC, KC_RBRC, KC_RALT, KC_RGUI,  XXXXXXX,
       KC_APP,      KC_LANG2,
       KC_LANG2,
-      KC_LANG2,    KC_SPC, MO(SYMB)
+      KC_LANG2,    MO(SYMB), KC_SPC
       ),
 
 
