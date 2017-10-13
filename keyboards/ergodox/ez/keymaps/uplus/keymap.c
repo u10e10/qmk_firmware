@@ -17,7 +17,6 @@ enum planck_keycodes {
   DYNAMIC_MACRO_RANGE,
 };
 
-#define _DYN 3
 #include "dynamic_macro.h"
 
 // 押下時間で処理を分ける http://qiita.com/teri_yakichan/items/db54589b67ba9330faed
@@ -61,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
  * |  Esc   |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  |   \    |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
- * |        | Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
+ * | DYN_STP| Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
  *                                     |  Eng  | Play |     |  App |  Jpn  |
@@ -78,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX,        KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_TAB,
       KC_ENT,         KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
       KC_ESC,         KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
-      XXXXXXX,        KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
+      DYN_REC_STOP,   KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
                KC_LANG1,      KC_MPLY,
                               KC_LANG1,
       KC_LCTL, OSM(MOD_LSFT), KC_LANG1,
