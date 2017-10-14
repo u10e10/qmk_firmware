@@ -52,7 +52,7 @@ enum planck_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   L3   |   1  |   2  |   3  |   4  |   5  |DYN_R1|     |      |   6  |   7  |   8  |   9  |   0  | DYN_P1 |
+ * |   L3   |   1  |   2  |   3  |   4  |   5  |DYN_P1|     |DYN_R1|   6  |   7  |   8  |   9  |   0  |DYN_STOP|
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
  * |        |   Q  |   W  |   E  |   R  |   T  | TAB  |     |  -   |   Y  |   U  |   I  |   O  |   P  |   -    |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|  `   |     |  =   |------+------+------+------+------+--------|
  * |  Esc   |   Z  |   X  |   C  |   V  |   B  |      |     |      |   N  |   M  |   ,  |   .  |   /  |   \    |
  * |--------+------+------+------+------+-------------'     `-------------+------+------+------+------+--------|
- * | DYN_STP| Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
+ * |        | Gui  | Alt  | ESC  |  L3  |                                 |   [  |   ]  | Alt  | Gui  |        |
  * `------------------------------------'                                 `------------------------------------'
  *                                     .--------------.     .--------------.
  *                                     |  Eng  | Play |     |  App |  Jpn  |
@@ -73,16 +73,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
   [BASE] = KEYMAP(  // layer 0 : default
-      MO(MISC),       KC_1,     KC_2,    KC_3,    KC_4,   KC_5,  DYN_REC1,
+      MO(MISC),       KC_1,     KC_2,    KC_3,    KC_4,   KC_5,  DYN_PLY1,
       XXXXXXX,        KC_Q,     KC_W,    KC_E,    KC_R,   KC_T,  KC_TAB,
       KC_ENT,         KC_A,     KC_S,    KC_D,    KC_F,   KC_G,
       KC_ESC,         KC_Z,     KC_X,    KC_C,    KC_V,   KC_B,  KC_GRV,
-      DYN_REC_STOP,   KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
+      XXXXXXX,        KC_LGUI,  KC_LALT, KC_ESC,  MO(MISC),
                KC_LANG1,      KC_MPLY,
                               KC_LANG1,
       KC_LCTL, OSM(MOD_LSFT), KC_LANG1,
 
-      XXXXXXX,     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,     DYN_PLY1,
+      DYN_REC1,    KC_6,   KC_7,    KC_8,    KC_9,    KC_0,     DYN_REC_STOP,
       KC_MINS,     KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,     KC_MINS,
                    KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,  LT_2(QUOT),
       KC_EQL,      KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
