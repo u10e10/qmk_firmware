@@ -32,6 +32,7 @@ enum planck_keycodes {
 #define M_HW 0
 #define M_AMA 1
 #define M_DKV 2
+#define M_YRH 3
 
 #define LOCK RGUI(KC_L)
 #define LT_2(key) LT(MDIA, KC_##key)
@@ -160,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 3: Misc layer(Right hand keys for window control)
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      |M(HW) |M(AMA)|M(DKV)|      |      |        |
+ * |   **   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |     |      |M(HW) |M(AMA)|M(DKV)|M(YRH)|      |        |
  * |--------+------+------+------+------+-------------|     |------+------+------+------+------+------+--------|
  * |        |  F7  |  F8  |  F9  | F10  | F11  | F12  |     |      |CA_Lft|CA_Dwn|CA_Up |CA_Rht|      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
@@ -179,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,
       _______, _______, _______,
 
-      _______, M(M_HW), M(M_AMA),M(M_DKV),_______, _______, _______,
+      _______, M(M_HW), M(M_AMA),M(M_DKV),M(M_YRH),_______, _______,
       _______, CA(LEFT),CA(DOWN),CA(UP),  CA(RGHT),_______, _______,
                GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),_______, _______,
       _______, G(LEFT), G(DOWN), G(UP),   G(RGHT), _______, _______,
@@ -259,6 +260,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         break;
       case M_DKV:
         SEND_STRING("http://dokidokivisual.com");
+        break;
+      case M_YRH:
+        SEND_STRING("http://www.ichijinsha.co.jp/yurihime/");
         break;
     }
   } else {
