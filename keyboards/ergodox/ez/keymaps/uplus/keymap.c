@@ -34,6 +34,7 @@ enum planck_keycodes {
 #define M_DKV 2
 #define M_YRH 3
 
+#define BREAK RCTL(KC_PAUSE)
 #define LOCK RGUI(KC_L)
 #define LT_2(key) LT(MDIA, KC_##key)
 #define LT_3(key) LT(MISC, KC_##key)
@@ -127,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 2: Mouse and Media layer(H_ keys are VLC's shortcuts)
  * ,--------------------------------------------------.     ,--------------------------------------------------.
- * | RESET  |      |      |      |      |      |      |     |Sleep | Lock |      |      |PrtSc |      |        |
+ * | RESET  |      |      |      |      |      |      |     |Sleep | Lock |Pause |Break |PrtSc |      |        |
  * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
  * |        | Mclk |WBack | MUp  | WFwd | G(M) | G(R) |     | H_F  | H_E  |VolDn | Mute |VolUp |      |        |
  * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
@@ -148,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,
       _______, _______, _______,
 
-      KC_SLEP, LOCK,    _______, _______, KC_PSCR, _______, _______,
+      KC_SLEP, LOCK,    KC_PAUS, BREAK,   KC_PSCR, _______, _______,
       H(F),    H(E),    KC_VOLD, KC_MUTE, KC_VOLU, _______, _______,
                H(A),    H(B),    H(C),    H(D),    _______, _______,
       H(G),    XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
