@@ -40,7 +40,7 @@ enum custom_keycodes {
 #define M_S(key) D(LSFT), T(key), U(LSFT)
 
 #define DYN_REC1 DYN_REC_START1
-#define DYN_PLY1 DYN_MACRO_PLAY1
+#define YN_PLY1 DYN_MACRO_PLAY1
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
