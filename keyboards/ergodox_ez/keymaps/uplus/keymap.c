@@ -3,16 +3,8 @@
 #include "action_layer.h"
 #include "version.h"
 
-
-void backlight_toggle(void){
-    // static int flag=0;
-    // if(!flag) ergodox_led_all_on();
-    // else ergodox_led_all_off();
-    // flag = !flag;
-}
-
 enum custom_keycodes {
-    PLACEHOLDER = SAFE_RANGE, // can always be here
+    PLACEHOLDER = SAFE_RANGE, // 使用可能なキーコードの範囲
     EPRM,
     VRSN,
     RGB_SLD,
@@ -160,9 +152,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [MDIA] = KEYMAP(
             RESET,   _______, _______, _______, _______, _______, _______,
-            _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(M),    G(R),
+            _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),    _______,
             _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,
-            _______, KC_BTN2, KC_WH_L, KC_APP,  KC_WH_R, KC_WH_D, _______,
+            _______, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D, _______,
             _______, _______, _______, _______, _______,
             _______, _______,
             _______,

@@ -3,6 +3,21 @@
 
 #include "config_common.h"
 
+#define ONESHOT_TAP_TOGGLE 5 // 固定キーロック
+#define ONESHOT_TIMEOUT 3000 // Time (in ms) before the one shot key is released
+
+#undef MOUSEKEY_INTERVAL
+#undef MOUSEKEY_DELAY
+#undef MOUSEKEY_TIME_TO_MAX
+#undef MOUSEKEY_MAX_SPEED
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_INTERVAL       20
+#define MOUSEKEY_DELAY          0
+#define MOUSEKEY_TIME_TO_MAX    60
+#define MOUSEKEY_MAX_SPEED      7
+#define MOUSEKEY_WHEEL_DELAY    0
+
+
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PREONIC_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
