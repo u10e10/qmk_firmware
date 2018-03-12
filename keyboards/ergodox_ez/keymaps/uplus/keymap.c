@@ -3,6 +3,11 @@
 #include "action_layer.h"
 #include "version.h"
 
+#define _______ KC_TRNS
+#define XXXXXXX KC_NO
+// 明示的透過
+#define __XXX__ KC_TRNS
+
 // for dynamic macro
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE, // 使用可能なキーコードの範囲
@@ -49,8 +54,7 @@ enum custom_keycodes {
 #define DYN_REC2 DYN_REC_START2
 #define DYN_PLY2 DYN_MACRO_PLAY2
 #define DYN_STOP DYN_REC_STOP
-#define _______ KC_TRNS
-#define XXXXXXX KC_NO
+
 
 // TxBolt Codes
 #define GRPMASK 0b11000000
@@ -121,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
             _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F12,
             KC_UNDS, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN,  KC_RPRN, KC_F11,
-            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN, KC_DQUO,
+                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COLN, KC_DQUO,
             KC_PLUS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_QUES, KC_PIPE,
             KC_LCBR, KC_RCBR, _______, _______,  _______,
             _______, _______,
@@ -151,9 +155,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______,
             _______, _______, _______,
 
-            KC_SLEP, LOCK,    KC_PAUS, BREAK,   KC_PSCR, _______, _______,
+            _______, KC_SLEP, LOCK,    KC_PAUS, BREAK,   KC_PSCR, _______,
             H(F),    H(E),    KC_VOLD, KC_MUTE, KC_VOLU, _______, _______,
-            H(A),    H(B),    H(C),    H(D),    _______, _______,
+                     H(A),    H(B),    H(C),    H(D),    _______, _______,
             H(G),    XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
             _______, _______, _______, _______, _______,
             _______, _______,
@@ -290,6 +294,7 @@ void matrix_scan_user(void) {
 
 // Runs whenever there is a layer state change.
 uint32_t layer_state_set_user(uint32_t state) {
+    // TODO:
     return state;
 
     ergodox_board_led_off();

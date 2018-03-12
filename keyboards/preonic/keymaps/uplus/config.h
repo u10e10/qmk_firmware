@@ -6,16 +6,12 @@
 #define ONESHOT_TAP_TOGGLE 5 // 固定キーロック
 #define ONESHOT_TIMEOUT 3000 // Time (in ms) before the one shot key is released
 
-#define PERMISSIVE_HOLD
 #define TAPPING_TOGGLE  1
 #define TAPPING_TERM    200
-#define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
+#define RETRO_TAPPING   // 時間内にキー入力がなければTap扱い
+#define PERMISSIVE_HOLD // 時間経過前に他のキーを押すとHold扱い
+// #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
 
-#undef MOUSEKEY_INTERVAL
-#undef MOUSEKEY_DELAY
-#undef MOUSEKEY_TIME_TO_MAX
-#undef MOUSEKEY_MAX_SPEED
-#undef MOUSEKEY_WHEEL_DELAY
 #define MOUSEKEY_INTERVAL       20
 #define MOUSEKEY_DELAY          0
 #define MOUSEKEY_TIME_TO_MAX    60
@@ -27,10 +23,7 @@
     #define STARTUP_SONG SONG(PREONIC_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
-                                }
+    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND) }
 #endif
 
 #define MUSIC_MASK (keycode != KC_NO)
