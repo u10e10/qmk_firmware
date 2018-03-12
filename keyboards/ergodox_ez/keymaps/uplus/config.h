@@ -4,6 +4,8 @@
 #define ONESHOT_TAP_TOGGLE 5 // 固定キーロック
 #define ONESHOT_TIMEOUT 3000 // Time (in ms) before the one shot key is released
 
+#define PERMISSIVE_HOLD
+
 #undef LED_BRIGHTNESS_LO
 #undef LED_BRIGHTNESS_HI
 #define LED_BRIGHTNESS_LO       1
