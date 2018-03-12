@@ -3,24 +3,14 @@
 #include "action_layer.h"
 #include "version.h"
 
+// for dynamic macro
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE, // 使用可能なキーコードの範囲
     EPRM,
     VRSN,
     RGB_SLD,
+    DYNAMIC_MACRO_RANGE, // このコード以降にダイナミックマクロのキーが割り当てられる
 };
-
-enum {
-    TD_ESC_LANG1 = 0
-};
-
-
-// for dynamic macro
-enum planck_keycodes {
-    QWERTY = SAFE_RANGE,
-    DYNAMIC_MACRO_RANGE,
-};
-
 
 #include "dynamic_macro.h"
 
@@ -56,13 +46,6 @@ enum planck_keycodes {
 
 // TxBolt Codes
 #define GRPMASK 0b11000000
-
-//Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-    //Tap once for Esc, twice for LANG1
-    // Other declarations would go here, separated by commas, if you have them
-    [TD_ESC_LANG1] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_LANG1),
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Basic layer
@@ -200,10 +183,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______, _______),
 };
 
-const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_TAP_TOGGLE(SYMB)                // FN1 - Momentary Layer 1 (Symbols)
-};
-
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
     if(!record->event.pressed) {
         return MACRO_NONE;
@@ -267,16 +246,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 ergodox_led_all_on();
                 return true;
             }
-        default:
-            if (record->event.pressed) {
-                set_oneshot_layer(BASE, ONESHOT_START);
-                // clear_oneshot_layer_state(ONESHOT_PRESSED);
-            } else {
-                // set_oneshot_layer(BASE, ONESHOT_PRESSED);
+        case DYN_REC_START1:
+            if(record->event.pressed){
+                ergodox_right_led_1_on();
             }
-
-            return true;
+            break;
+        case DYN_REC_START2:
+            if(record->event.pressed){
+                ergodox_right_led_2_on();
+            }
+            break;
+        case DYN_MACRO_PLAY1:
+            break;
+        case DYN_MACRO_PLAY2:
+            break;
+        case DYN_REC_STOP:
+            // pressedだと反応しない
+            ergodox_led_all_off();
+            break;
     }
+
     return true;
 }
 
