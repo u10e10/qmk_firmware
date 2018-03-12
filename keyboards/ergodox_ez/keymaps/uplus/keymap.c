@@ -19,11 +19,14 @@ enum custom_keycodes {
 // https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
 // /quantum/keymap.h
 
+/// TODO: KC_F だけじゃなく KC_FN にも対応する
+
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 #define MISC 3 // left hand layer
 
+// 古い書き方
 #define M_HW 0
 #define M_AMA 1
 #define M_DKV 2
@@ -33,14 +36,19 @@ enum custom_keycodes {
 #define LOCK RGUI(KC_L)
 #define LT_2(key) LT(MDIA, KC_##key)
 #define LT_3(key) LT(MISC, KC_##key)
+// CTL | SFT | ALT | GUI
 #define H(key)  HYPR(KC_##key)
 #define G(key)  RGUI(KC_##key)
 #define CA(key) RCTL(RALT(KC_##key))
 #define GA(key) RGUI(RALT(KC_##key))
+#define GC(key) RGUI(RCTL(KC_##key))
 #define M_S(key) D(LSFT), T(key), U(LSFT)
 
 #define DYN_REC1 DYN_REC_START1
-#define YN_PLY1 DYN_MACRO_PLAY1
+#define DYN_PLY1 DYN_MACRO_PLAY1
+#define DYN_REC2 DYN_REC_START2
+#define DYN_PLY2 DYN_MACRO_PLAY2
+#define DYN_STOP DYN_REC_STOP
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
@@ -80,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_LANG1,
             KC_LCTL,    OSM(MOD_LSFT), KC_LANG1,
 
-            DYN_REC1,   KC_6,     KC_7,    KC_8,    KC_9,    KC_0,     DYN_REC_STOP,
+            DYN_REC1,   KC_6,     KC_7,    KC_8,    KC_9,    KC_0,     DYN_STOP,
             KC_MINS,    KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,     KC_MINS,
             KC_H,       KC_J,     KC_K,    KC_L,    KC_SCLN, LT_2(QUOT),
             KC_EQL,     KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_BSLS,
@@ -124,11 +132,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,--------------------------------------------------.     ,--------------------------------------------------.
      * | RESET  |      |      |      |      |      |      |     |Sleep | Lock |Pause |Break |PrtSc |      |        |
      * |--------+------+------+------+------+------+------|     |------+------+------+------+------+------+--------|
-     * |        | Mclk |WBack | MUp  | WFwd | G(M) | G(R) |     | H_F  | H_E  |VolDn | Mute |VolUp |      |        |
+     * |        | Mclk |WBack | MUp  | WFwd | G(R) |      |     | H_F  | H_E  |VolDn | Mute |VolUp |      |        |
      * |--------+------+------+------+------+------|      |     |      |------+------+------+------+------+--------|
      * |        | Lclk |MsLeft|MsDown|MsRght| WhUp |------|     |------| H_A  | H_B  | H_C  | H_D  |  **  |        |
      * |--------+------+------+------+------+------|      |     | H_G  |------+------+------+------+------+--------|
-     * |        | Rclk |WhLeft| App  |WhRght|WhDown|      |     |      |      | Prev | Play | Next |      |        |
+     * |        | Rclk |WhLeft| G(M) |WhRght|WhDown|      |     |      |      | Prev | Play | Next |      |        |
      * `--------------------------------------------------'     `--------------------------------------------------'
      *                                                          .-------------.
      *                                                          | ACL0 | ACL0 |
@@ -174,8 +182,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______, _______,
 
             _______, M(M_HW), M(M_AMA),M(M_DKV),M(M_YRH),_______, _______,
-            _______, CA(LEFT),CA(DOWN),CA(UP),  CA(RGHT),_______, _______,
-            GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),_______, _______,
+            _______, GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),_______, _______,
+                     GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),_______, _______,
             _______, G(LEFT), G(DOWN), G(UP),   G(RGHT), _______, _______,
             _______, _______, _______, _______, _______,
             _______, _______,
