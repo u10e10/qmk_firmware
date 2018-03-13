@@ -1,5 +1,6 @@
 #ifndef CONFIG_USER_H
 #define CONFIG_USER_H
+// https://docs.qmk.fm/config_options.html
 
 #include "config_common.h"
 
@@ -8,7 +9,7 @@
 
 #define TAPPING_TOGGLE  1
 #define TAPPING_TERM    200
-#define RETRO_TAPPING   // 時間内にキー入力がなければTap扱い
+// #define RETRO_TAPPING   // 時間内にキー入力がなければTap扱い DYN系との相性が悪い
 #define PERMISSIVE_HOLD // 時間経過前に他のキーを押すとHold扱い
 // #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
 
