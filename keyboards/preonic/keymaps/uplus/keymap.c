@@ -29,9 +29,9 @@
 #define A_T(key) RALT_T(KC_##key)
 #define G_T(key) RGUI_T(KC_##key)
 
-#define L_S MO(_SUB)
-#define L_M MO(_MISC)
-#define L_A MO(_ADVANCE)
+#define L_S OSL(_SUB)
+#define L_M OSL(_MISC)
+#define L_A OSL(_ADVANCE)
 #define LT_S(key) LT(_SUB, KC_##key)
 #define LT_M(key) LT(_MISC, KC_##key)
 #define LT_A(key) LT(_ADVANCE, KC_##key)
@@ -171,8 +171,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ADVANCE] = {
   {RESET,   _______, _______, QWERTY,  COLEMAK, DVORAK,         _______, _______, _______, _______, _______, _______},
   {DEBUG,   _______, DYN_PLY1,DYN_PLY2,_______, _______,        _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______},
-  {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   A(F4),          H(A),    H(B),    H(C),    H(D),    H(F),    __XXX__},
-  {TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(G),    __XXX__},
+  {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   A(F4),          H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
+  {TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
   {TERM_OFF,__XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
 },
 
