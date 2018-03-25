@@ -221,6 +221,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 };
 
+void send_key(uint16_t keycode) {
+  register_code(keycode);
+  unregister_code(keycode);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_record_dynamic_macro(keycode, record)) {
       return false;
@@ -244,6 +249,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // set_single_persistent_default_layer(_DVORAK);
           }
           return false;
+          break;
+        case KC_ESC:
+          if (record->event.pressed) {
+              register_code(KC_LANG1);
+          } else {
+              unregister_code(KC_LANG1);
+          }
           break;
   }
 
