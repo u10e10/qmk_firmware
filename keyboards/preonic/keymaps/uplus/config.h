@@ -8,7 +8,7 @@
 #define ONESHOT_TIMEOUT 3000 // Time (in ms) before the one shot key is released
 
 #define TAPPING_TOGGLE  1
-#define TAPPING_TERM    175
+#define TAPPING_TERM    160
 // #define RETRO_TAPPING   // 時間内にキー入力がなければTap扱い DYN系との相性が悪い
 #define PERMISSIVE_HOLD // 時間経過前に他のキーを押すとHold扱い
 // #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
@@ -18,7 +18,6 @@
 #define MOUSEKEY_TIME_TO_MAX    60
 #define MOUSEKEY_MAX_SPEED      7
 #define MOUSEKEY_WHEEL_DELAY    0
-
 
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PREONIC_SOUND)
