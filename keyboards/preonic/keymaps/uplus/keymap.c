@@ -103,8 +103,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_SUB] = {
   {_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12},
   {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_F11},
-  {__XXX__, KC_BSPC, KC_DEL,  KC_LBRC, KC_RBRC, KC_TILD,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG1,__XXX__},
-  {_______, KC_EQL,  KC_PLUS, KC_LCBR, KC_RCBR, KC_GRV,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG2,_______},
+  {__XXX__, KC_BSPC, KC_DEL,  KC_LBRC, KC_RBRC, KC_TILD,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG1,KC_DQT},
+  {_______, KC_EQL,  KC_PLUS, KC_LCBR, KC_RCBR, KC_GRV,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG2,KC_PIPE},
   {_______, __XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
 },
 
