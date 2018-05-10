@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
 [_ADVANCE] = {
   {RESET,   _______, _______, QWERTY,  COLEMAK, DVORAK,         _______, _______, _______, _______, _______, KC_SLEP},
-  {DEBUG,   _______, DYN_PLY1,DYN_PLY2,_______, A(F4),          _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______},
+  {DEBUG,   _______, DYN_PLY1,DYN_PLY2,_______, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______},
   {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   _______,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
   {TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
   {TERM_OFF,__XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
