@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SYMB] = KEYMAP(
             _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   _______,
             _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, _______,
-            _______, KC_BSPC, CA(S),   KC_DELT, CA(T),    KC_TILD,
+            _______, KC_BSPC, KC_DELT, CA(S),   CA(T),    KC_TILD,
             _______, CA(Z),   XXXXXXX, CA(D),   CA(Y),    CA(B),   KC_TILD,
             _______, _______, _______, _______, _______,
             _______, _______,
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MISC] = KEYMAP(
             _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    XXXXXXX,
             _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
-            _______, KC_BSPC, KC_PGUP, KC_DELT, XXXXXXX, XXXXXXX,
+            _______, KC_BSPC, KC_DELT, KC_PGUP, XXXXXXX, XXXXXXX,
             _______, KC_WBAK, KC_PGDN, KC_WFWD, XXXXXXX, XXXXXXX, LALT(KC_F4),
             _______, _______, _______, _______, _______,
             _______, _______,
