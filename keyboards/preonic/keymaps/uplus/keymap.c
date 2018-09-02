@@ -106,14 +106,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_SUB] = {
   {_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12},
   {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_F11},
-  {__XXX__, KC_BSPC, KC_DEL,  KC_LBRC, KC_RBRC, KC_TILD,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG1,KC_DQT},
-  {_______, KC_EQL,  KC_PLUS, KC_LCBR, KC_RCBR, KC_GRV,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG2,KC_PIPE},
+  {__XXX__, KC_BSPC, KC_DEL,  KC_LBRC, KC_RBRC, KC_TILD,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG2,KC_DQT},
+  {_______, KC_EQL,  KC_PLUS, KC_LCBR, KC_RCBR, KC_GRV,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG1,KC_PIPE},
   {_______, __XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
 },
 
 // Mouse keys, Window control shortcuts
 [_MISC] = {
-  {RESET,   KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,         KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12},
+  {XXXXXXX, KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,         KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12},
   {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),XXXXXXX, KC_FN11},
   {__XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,        GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__},
   {_______, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
@@ -123,10 +123,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
 [_ADVANCE] = {
   {RESET,   _______, _______, QWERTY,  COLEMAK, DVORAK,         _______, _______, _______, _______, _______, KC_SLEP},
-  {DEBUG,   _______, DYN_PLY1,DYN_PLY2,_______, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______},
-  {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   _______,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
+  {DEBUG,   XXXXXXX, DYN_PLY1,DYN_PLY2,XXXXXXX, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX},
+  {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   XXXXXXX,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
   {TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
-  {TERM_OFF,__XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
+  {TERM_OFF,__XXX__, _______, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, _______, __XXX__, _______}
 },
 
 
@@ -178,10 +178,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           break;
         case KC_ESC:
           if (record->event.pressed) {
-              register_code(KC_LANG1);
+              register_code(KC_ESC);
+              register_code(KC_LANG2);
           } else {
-              unregister_code(KC_LANG1);
+              unregister_code(KC_ESC);
+              unregister_code(KC_LANG2);
           }
+          return false;
           break;
   }
 
