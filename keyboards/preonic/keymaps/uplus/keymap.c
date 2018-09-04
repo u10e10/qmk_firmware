@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS},
   {C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, LT_M(QUOT)},
   {KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, LT_A(BSLS)},
-  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  O(LSFT), KC_LCTL,        KC_SPC,  L_S,     KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
+  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_LCTL, O(LSFT),        KC_SPC,  L_S,     KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
   // tty切替に使うためにRALT -> LALT
 },
 
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_F11},
   {__XXX__, KC_BSPC, KC_DEL,  KC_LBRC, KC_RBRC, KC_TILD,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG2,KC_DQT},
   {_______, KC_EQL,  KC_PLUS, KC_LCBR, KC_RCBR, KC_GRV,         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG1,KC_PIPE},
-  {_______, __XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______}
+  {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______}
 },
 
 // Mouse keys, Window control shortcuts
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),XXXXXXX, KC_FN11},
   {__XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,        GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__},
   {_______, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
-  {_______, __XXX__, _______, _______, __XXX__, _______,        _______, __XXX__, _______, _______, _______, _______},
+  {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______},
 },
 
 // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {DEBUG,   XXXXXXX, DYN_PLY1,DYN_PLY2,XXXXXXX, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX},
   {__XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   XXXXXXX,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
   {TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
-  {TERM_OFF,__XXX__, _______, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, _______, __XXX__, _______}
+  {TERM_OFF,__XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______}
 },
 
 
