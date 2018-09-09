@@ -1,3 +1,7 @@
+// vim: cursorcolumn
+
+// noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
+
 /* Copyright 2015-2017 Jack Humbert
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,12 +33,12 @@
 #define A_T(key) RALT_T(KC_##key)
 #define G_T(key) RGUI_T(KC_##key)
 
-#define L_S OSL(_SUB)
-#define L_M OSL(_MISC)
-#define L_A OSL(_ADVANCE)
-#define LT_S(key) LT(_SUB, KC_##key)
-#define LT_M(key) LT(_MISC, KC_##key)
-#define LT_A(key) LT(_ADVANCE, KC_##key)
+#define LO_S OSL(_SUB)
+#define LO_M OSL(_MISC)
+#define LO_A OSL(_ADVANCE)
+#define L_S(key) LT(_SUB, KC_##key)
+#define L_M(key) LT(_MISC, KC_##key)
+#define L_A(key) LT(_ADVANCE, KC_##key)
 
 // QK_LCTL | QK_LSFT | QK_LALT | QK_LGUI
 #define H(key)  HYPR(KC_##key)
@@ -77,7 +81,7 @@ enum preonic_keycodes {
    右下のAlt,Guiは必ず他のキーと使うからTapHoldにしてもいいのでは
 
    ESC 3回でLANG1
-   LT_S(ESC)もいいかも
+   L_S(ESC)もいいかも
 
    CTR(ENTER)便利なんだけどそれらを同時に押せない
 
@@ -96,9 +100,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = {
   {KC_APP,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DYN_STOP},
   {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS},
-  {C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, LT_M(QUOT)},
-  {KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, LT_A(BSLS)},
-  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_LCTL, O(LSFT),        KC_SPC,  L_S,     KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
+  {C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT)},
+  {L_M(ESC),KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS)},
+  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_LCTL, O(LSFT),        KC_SPC,  LO_S,    KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
   // tty切替に使うためにRALT -> LALT
 },
 
@@ -114,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Mouse keys, Window control shortcuts
 [_MISC] = {
   {XXXXXXX, KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,         KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12},
-  {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),XXXXXXX, KC_FN11},
+  {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(Y),   GC(U),   GC(I),   GC(O),   XXXXXXX, KC_FN11},
   {__XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,        GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__},
-  {_______, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
+  {__XXX__, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
   {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______},
 },
 
@@ -133,17 +137,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = {
   {KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC},
   {KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,           KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_DEL},
-  {KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,           KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    LT_M(QUOT)},
-  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, LT_A(ENT) },
-  {XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, L_M,     KC_SPC,         KC_SPC,  L_S,     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
+  {KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,           KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    L_M(QUOT)},
+  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(ENT) },
+  {XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, LO_M,    KC_SPC,         KC_SPC,  LO_S,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
 },
 
 [_DVORAK] = {
   {KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC},
   {KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,           KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_DEL},
-  {KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,           KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    LT_M(SLSH)},
-  {KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,           KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    LT_A(ENT) },
-  {XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, L_M,     KC_SPC,         KC_SPC,  L_S,     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
+  {KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,           KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    L_M(SLSH)},
+  {KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,           KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    L_A(ENT) },
+  {XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, LO_M,    KC_SPC,         KC_SPC,  LO_S,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
 },
 };
 
