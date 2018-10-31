@@ -62,7 +62,7 @@ enum preonic_layers {
   _DVORAK,
   _SUB,
   _MISC,
-  _ADVANCE
+  _ADVANCE,
 };
 
 enum preonic_keycodes {
@@ -71,6 +71,7 @@ enum preonic_keycodes {
   DVORAK,
   SUB,
   MISC,
+  ADVANCE,
   DYNAMIC_MACRO_RANGE, // このコード以降にダイナミックマクロのキーが割り当てられる
 };
 
