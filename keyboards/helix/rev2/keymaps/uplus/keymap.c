@@ -116,10 +116,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
-    // |      |      |      |      |      |      |      |      |      |      |RGB ON| HUE+ | SAT+ | VAL+ |
-    // |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    // |      |      |      |      |      |      |      |      |      |      | MODE | HUE- | SAT- | VAL- |
-    // `-------------------------------------------------------------------------------------------------'
+    // RGB ON| HUE+ | SAT+ | VAL+ |
+    // ------+------+------+------|
+    //  MODE | HUE- | SAT- | VAL- |
+    // ---------------------------'
     // RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI
     // RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD
   [_ADVANCE] =  LAYOUT( \
@@ -377,7 +377,11 @@ static void render_logo(struct CharacterMatrix *matrix) {
 
 void render_status(struct CharacterMatrix *matrix) {
   // Render to mode icon
-  static char logo[][2][3]={{{0x95,0x96,0},{0xb5,0xb6,0}},{{0x97,0x98,0},{0xb7,0xb8,0}}};
+  static char logo[][2][3]={
+      {{0x95,0x96,0},{0xb5,0xb6,0}}, // Mac
+      {{0x97,0x98,0},{0xb7,0xb8,0}}, // Windows
+  };
+
   if (keymap_config.swap_lalt_lgui==false) {
     matrix_write(matrix, logo[0][0]);
     matrix_write_P(matrix, PSTR("\n"));
