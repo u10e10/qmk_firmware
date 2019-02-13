@@ -127,10 +127,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
 [_ADVANCE] = {
-  {RESET,   DYN_REC1,DYN_REC1,QWERTY,  COLEMAK, DVORAK,         _______, _______, _______, _______, _______, KC_SLEP},
-  {DEBUG,   DYN_PLY1,DYN_PLY2,XXXXXXX, XXXXXXX, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX},
-  {__XXX__, DYN_STOP,XXXXXXX, CA(D),   CA(T),   XXXXXXX,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
-  {TERM_ON, CA(S),   XXXXXXX,XXXXXXX,  CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
+  {RESET,   DYN_REC1,DYN_REC1,QWERTY,  COLEMAK, DVORAK,         _______, _______, _______, _______, KC_BRK,  KC_SLEP},
+  {DEBUG,   DYN_PLY1,DYN_PLY2,XXXXXXX, KC_PSCR, A(F4),          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX},
+  {__XXX__, DYN_STOP,CA(S),   CA(D),   CA(T),   XXXXXXX,        H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__},
+  {TERM_ON, XXXXXXX, XXXXXXX, XXXXXXX, CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
   {TERM_OFF,__XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______}
 },
 
