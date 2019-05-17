@@ -25,6 +25,10 @@
 #define XXXXXXX KC_NO
 #define __XXX__ KC_TRNS // 明示的透過
 
+#undef A
+#undef G
+#undef C
+
 #define O(key) OSM(MOD_##key)
 #define C(key) RCTL(KC_##key)
 #define A(key) RALT(KC_##key)
@@ -103,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS},
   {C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT)},
   {KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS)},
-  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_LCTL, O(LSFT),        KC_SPC,  LO_S,    KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
+  {KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  O(LSFT), KC_LCTL,        LO_S,  KC_SPC,    KC_EQL,  KC_LALT, KC_RGUI, KC_ENT}
   // tty切替に使うためにRALT -> LALT
 },
 
