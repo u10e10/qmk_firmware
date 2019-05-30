@@ -61,7 +61,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DYNAMIC_MACRO_SIZE 128
 
 // https://beta.docs.qmk.fm/features/feature_mouse_keys
-// アクセルを向こうにして3段階にする
+// アクセルを効無にして3段階にする
 // #define MK_3_SPEED
 
 // アクセルモードでもACL0~2は使えるけど0が早い
