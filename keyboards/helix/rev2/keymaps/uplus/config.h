@@ -53,11 +53,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_AUTO_SHIFT_SPECIAL
 // #define NO_AUTO_SHIFT_NUMERIC
 
-#define MOUSEKEY_INTERVAL       20
 #define MOUSEKEY_DELAY          0
+#define MOUSEKEY_INTERVAL       10
+#define MOUSEKEY_MAX_SPEED      10
 #define MOUSEKEY_TIME_TO_MAX    60
-#define MOUSEKEY_MAX_SPEED      7
-#define MOUSEKEY_WHEEL_DELAY    0
+#define MOUSEKEY_WHEEL_MAX_SPEED 8
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 60
 
 #define DYNAMIC_MACRO_SIZE 128
 
