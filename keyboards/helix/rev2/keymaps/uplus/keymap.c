@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD
   [_ADVANCE] =  LAYOUT( \
     RESET,   _______, _______, QWERTY,  COLEMAK, DVORAK,                    _______, _______, _______, _______, _______, KC_SLEP,
-    DEBUG,   XXXXXXX, DYN_PLY1,DYN_PLY2,XXXXXXX, A(F4),                     XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+    DEBUG,   XXXXXXX, DYN_PLY1,DYN_PLY2,KC_PSCR, XXXXXXX,                   XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
     __XXX__, C(ENT),  DYN_REC1,DYN_REC2,CA(T),   XXXXXXX,                   H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
     TERM_ON, CA(S),   DYN_STOP,CA(D),   CA(Y),   CA(B),   _______, _______, H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
     TERM_OFF,__XXX__, __XXX__, _______, __XXX__, __XXX__, _______, _______, __XXX__, __XXX__, _______, __XXX__, __XXX__, _______
