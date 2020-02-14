@@ -53,6 +53,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_AUTO_SHIFT_SPECIAL
 // #define NO_AUTO_SHIFT_NUMERIC
 
+#define DYNAMIC_MACRO_SIZE 128
+
 #define MOUSEKEY_DELAY          0
 #define MOUSEKEY_INTERVAL       10
 #define MOUSEKEY_MAX_SPEED      10
@@ -60,6 +62,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_MAX_SPEED 8
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 60
 
-#define DYNAMIC_MACRO_SIZE 128
+// 無効だとタップしてモード切替になる
+#define MK_MOMENTARY_ACCEL
+
+#define MK_C_INTERVAL_UNMOD 5
+#define MK_C_INTERVAL_0     5
+#define MK_C_INTERVAL_1     5
+#define MK_C_INTERVAL_2     5
+
+#define MK_C_OFFSET_UNMOD   12
+#define MK_C_OFFSET_0       2
+#define MK_C_OFFSET_1       16
+#define MK_C_OFFSET_2       32
+
+#define MK_W_C_INTERVAL_UNMOD 16
+#define MK_W_C_OFFSET_UNMOD   10
 
 #endif /* CONFIG_USER_H */
