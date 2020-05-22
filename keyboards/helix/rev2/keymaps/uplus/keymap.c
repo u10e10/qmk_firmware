@@ -19,6 +19,34 @@ extern rgblight_config_t rgblight_config;
 
 extern uint8_t is_master;
 
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum layer_number {
+  _QWERTY = 0,
+  _SUB,
+  _MISC,
+  _ADVANCE
+};
+
+
+enum custom_keycodes {
+  QWERTY = SAFE_RANGE, // 使用可能なキーコード
+  COLEMAK,
+  DVORAK,
+  SUB,
+  MISC,
+  ADVANCE,
+
+  BACKLIT,
+  EISU,
+  KANA,
+  RGBRST,
+
+  DYNAMIC_MACRO_RANGE, // このコード以降にダイナミックマクロのキーが割り当てられる
+};
+
 #undef C
 #undef A
 #undef G
@@ -47,34 +75,6 @@ extern uint8_t is_master;
 #define CA(key) RCTL(RALT(KC_##key))
 #define GA(key) RGUI(RALT(KC_##key))
 #define GC(key) RGUI(RCTL(KC_##key))
-
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
-enum layer_number {
-  _QWERTY = 0,
-  _SUB,
-  _MISC,
-  _ADVANCE
-};
-
-
-enum custom_keycodes {
-  QWERTY = SAFE_RANGE, // 使用可能なキーコード
-  COLEMAK,
-  DVORAK,
-  SUB,
-  MISC,
-  ADVANCE,
-
-  BACKLIT,
-  EISU,
-  KANA,
-  RGBRST,
-
-  DYNAMIC_MACRO_RANGE, // このコード以降にダイナミックマクロのキーが割り当てられる
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Main layer
