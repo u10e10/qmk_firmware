@@ -18,10 +18,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_USER_H
-#define CONFIG_USER_H
+#pragma once
 
 // place overrides here
+
+#ifdef AUDIO_ENABLE
+  #define STARTUP_SONG SONG(STARTUP_SOUND)
+  #define AUDIO_CLICKY
+#endif
 
 // If you need more program area, try select and reduce rgblight modes to use.
 
@@ -77,5 +81,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MK_W_C_INTERVAL_UNMOD 16
 #define MK_W_C_OFFSET_UNMOD   10
-
-#endif /* CONFIG_USER_H */

@@ -11,7 +11,6 @@
   #include "ssd1306.h"
 #endif
 
-extern keymap_config_t keymap_config;
 
 #ifdef RGBLIGHT_ENABLE
 //Following line allows macro to read current RGB settings
@@ -19,6 +18,8 @@ extern rgblight_config_t rgblight_config;
 #endif
 
 extern uint8_t is_master;
+
+// extern keymap_config_t keymap_config;
 
 
 
