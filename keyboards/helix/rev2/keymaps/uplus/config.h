@@ -61,12 +61,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DYNAMIC_MACRO_SIZE 128
 // #define DYNAMIC_MACRO_USER_CALL HOGEHOGE
 
-#define MOUSEKEY_DELAY          0
-#define MOUSEKEY_INTERVAL       10
-#define MOUSEKEY_MAX_SPEED      10
-#define MOUSEKEY_TIME_TO_MAX    60
-#define MOUSEKEY_WHEEL_MAX_SPEED 8
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 60
+// 時間は多分100ms単位
+#define MOUSEKEY_DELAY             0
+#define MOUSEKEY_INTERVAL          16
+#define MOUSEKEY_MAX_SPEED         16
+#define MOUSEKEY_TIME_TO_MAX       50
+#define MOUSEKEY_WHEEL_DELAY       0
+#define MOUSEKEY_WHEEL_INTERVAL    10
+#define MOUSEKEY_WHEEL_MAX_SPEED   10
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 80
 
 // 無効だとタップしてモード切替になる
 #define MK_MOMENTARY_ACCEL
