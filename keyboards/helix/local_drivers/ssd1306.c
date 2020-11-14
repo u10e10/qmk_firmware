@@ -2,7 +2,6 @@
 #ifdef SSD1306OLED
 
 #include "ssd1306.h"
-struct CharacterMatrix display;
 #include "i2c.h"
 #include <string.h>
 #include "print.h"
