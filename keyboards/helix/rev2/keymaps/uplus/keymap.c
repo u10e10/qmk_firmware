@@ -403,11 +403,11 @@ static void render_layer_status(struct CharacterMatrix *matrix) {
 void render_status(struct CharacterMatrix *matrix) {
 
   // Render to mode icon
-  static const char os_logo[][2][3] PROGMEM  ={{{0x95,0x96,0},{0xb5,0xb6,0}},{{0x97,0x98,0},{0xb7,0xb8,0}}};
+  static const char os_logo[][3][3] PROGMEM = {{{0x95,0x96,0},{0xb5,0xb6,0}}, {{0x97,0x98,0},{0xb7,0xb8,0}}, {{0x99,0x9a,0},{0xb9,0xba,0}}};
   if(keymap_config.swap_lalt_lgui==false){
-    matrix_write_P(matrix, os_logo[0][0]);
+    matrix_write_P(matrix, os_logo[2][0]);
     matrix_write_P(matrix, PSTR("\n"));
-    matrix_write_P(matrix, os_logo[0][1]);
+    matrix_write_P(matrix, os_logo[2][1]);
   }else{
     matrix_write_P(matrix, os_logo[1][0]);
     matrix_write_P(matrix, PSTR("\n"));
