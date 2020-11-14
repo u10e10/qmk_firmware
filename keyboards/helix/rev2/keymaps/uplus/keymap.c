@@ -79,11 +79,11 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Main layer
   [_QWERTY] = LAYOUT( \
-    KC_APP,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DM_RSTP,
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS,
-    C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT),
-    L_M(TAB),KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, KC_RBRC,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS),
-    KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_ESC,  O(LSFT), KC_LCTL, LO_S,      KC_SPC,  KC_MINUS,KC_EQL,  KC_LALT, KC_RGUI, KC_ENT
+    KC_APP,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DM_RSTP,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS,
+    C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT),
+    L_M(TAB),KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS),
+    KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_ESC,  O(LSFT), KC_LCTL, LO_S,    KC_SPC,  KC_MINUS,KC_EQL,  KC_LALT, KC_RGUI, KC_ENT
     // tty切替に使うためにRALT -> LALT
     ),
 
@@ -113,10 +113,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI
     // RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD
   [_ADVANCE] =  LAYOUT( \
-    RESET,   XXXXXXX, XXXXXXX, QWERTY,  COLEMAK, DVORAK,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP,
-    DEBUG,   XXXXXXX, DM_REC1, DM_PLY1, KC_PSCR, XXXXXXX,                   XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
-    __XXX__, C(ENT),  DM_REC2, DM_PLY2, CA(T),   XXXXXXX,                   H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
-    TERM_ON, CA(S),   DM_RSTP, CA(D),   CA(Y),   CA(B),   _______, _______, H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
+    RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP,
+    DEBUG,   DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX,                   XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+    __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX,                   H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
+    TERM_ON, DM_REC2, DM_PLY1, CA(D),   CA(Y),   CA(B),   _______, _______, H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
     TERM_OFF,__XXX__, __XXX__, _______, __XXX__, __XXX__, _______, _______, __XXX__, __XXX__, _______, __XXX__, __XXX__, _______
     )
 };

@@ -59,7 +59,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DYNAMIC_MACRO_NO_NESTING
 #define DYNAMIC_MACRO_SIZE 128
-// #define DYNAMIC_MACRO_USER_CALL HOGEHOGE
 
 // 時間は多分100ms単位
 #define MOUSEKEY_DELAY             0
