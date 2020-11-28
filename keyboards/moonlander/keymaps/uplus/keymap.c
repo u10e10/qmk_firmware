@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LBRC,          KC_RBRC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT),
         L_M(ESC),KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS),
         KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_ESC,           KC_ESC,           KC_ESC,           KC_MINUS,KC_EQL,  KC_LALT, KC_RGUI, KC_ENT,
-                                            O(LSFT), KC_LCTL, KC_ESC,           XXXXXXX, LO_S,    KC_SPC
+                                            O(LSFT), KC_LCTL, KC_LCTL,          LO_S,    LO_S,  KC_SPC
     ),
 
     // F1~F12, Backspace, Delete, Cursor keys, Lang keys, Symbols
@@ -91,8 +91,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LANG5,KC_F11,
         __XXX__, KC_BSPC, KC_DEL,  XXXXXXX, XXXXXXX, KC_TILD, _______,          _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG2,XXXXXXX,
         __XXX__, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_GRV,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG1,XXXXXXX,
-        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
-                                            _______, _______, _______,          _______, _______, _______
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
+                                            __XXX__, __XXX__, __XXX__,          __XXX__, __XXX__, __XXX__
     ),
 
     // Mouse keys, Window control shortcuts
@@ -101,8 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),    _______,          _______, GC(Y),   GC(U),   GC(I),   GC(O),   XXXXXXX, KC_FN11,
         __XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, _______,          _______, GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__,
         __XXX__, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,                            G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__,
-        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
-                                            _______, _______, _______,          KC_ACL1, KC_ACL2, KC_ACL0
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
+                                            __XXX__, __XXX__, __XXX__,          KC_ACL1, KC_ACL2, KC_ACL0
     ),
 
     // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
@@ -111,8 +111,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         DEBUG,   DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
         __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX, _______,          _______, H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
         __XXX__, DM_REC2, DM_PLY1, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
-        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
-                                            _______, _______, _______,          _______, _______, _______
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
+                                            __XXX__, __XXX__, __XXX__,          __XXX__, __XXX__, __XXX__
     ),
 };
 
@@ -125,4 +125,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
     return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    ML_LED_1(false);
+    ML_LED_2(false);
+    ML_LED_3(false);
+    ML_LED_4(false);
+    ML_LED_5(false);
+    ML_LED_6(false);
+
+    return state;
 }
