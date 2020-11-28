@@ -30,6 +30,7 @@ enum layers {
 
 enum custom_keycodes {
     VRSN = ML_SAFE_RANGE,
+    DYNAMIC_MACRO_RANGE, // このコード以降にダイナミックマクロのキーが割り当てられる
 };
 
 #define _______ KC_TRNS
@@ -125,4 +126,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
     return true;
+}
+
+layer_state_t layer_state_set_kb(layer_state_t state) {
+    return state;
 }

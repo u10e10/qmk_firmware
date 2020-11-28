@@ -19,6 +19,7 @@
 #pragma once
 
 #define ORYX_CONFIGURATOR
+#define MOONLANDER_USER_LEDS
 
 #define ONESHOT_TAP_TOGGLE 5 // 固定キーロック
 #define ONESHOT_TIMEOUT 3000 // Time (in ms) before the one shot key is released
