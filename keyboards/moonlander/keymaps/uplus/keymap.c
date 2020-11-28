@@ -65,11 +65,9 @@ enum custom_keycodes {
 
 // TG(SYMB) WEBUSB_PAIR MO(SYMB) TOGGLE_LAYER_COLOR VRSN
 // KC_AMPR KC_PERC KC_DLR KC_CIRC
-// EEP_RST, RGB_VAI, RGB_HUD, RGB_VAD, RGB_HUI
-// LED_LEVEL,RESET,EEP_RST
-// TERM_ON
-// TERM_OFF
-
+// RGB_VAI, RGB_VAD, RGB_HUI, RGB_HUD
+// LED_LEVEL, EEP_RST
+// TERM_ON, TERM_OFF
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -108,8 +106,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
     [ADVANCE] = LAYOUT_moonlander(
-        RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP,
-        DEBUG,   DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+        RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, RGB_VAD, XXXXXXX, RGB_VAI, XXXXXXX, KC_SLEP,
+        EEP_RST, DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
         __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX, _______,          _______, H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
         __XXX__, DM_REC2, DM_PLY1, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
         _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
