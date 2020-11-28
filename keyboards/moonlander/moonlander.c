@@ -40,6 +40,7 @@ void dynamic_macro_record_end_user(int8_t direction) {
 #endif
 
 void moonlander_led_task(void) {
+    is_launching = false; // 起動時のLEDインジケーターを抑制する
     if (is_launching) {
         ML_LED_1(false);
         ML_LED_2(false);
