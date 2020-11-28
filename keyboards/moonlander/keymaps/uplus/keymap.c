@@ -64,10 +64,9 @@ enum custom_keycodes {
 #define GC(key) RGUI(RCTL(KC_##key))
 
 // TG(SYMB) WEBUSB_PAIR MO(SYMB) TOGGLE_LAYER_COLOR VRSN
-// KC_AMPR KC_PERC KC_DLR KC_CIRC
-// RGB_VAI, RGB_VAD, RGB_HUI, RGB_HUD
-// LED_LEVEL, EEP_RST
-// TERM_ON, TERM_OFF
+// KC_AMPR KC_PERC KC_CIRC
+// LED_LEVEL
+// TERM_ON TERM_OFF
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
