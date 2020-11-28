@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, RGB_VAD, XXXXXXX, RGB_VAI, XXXXXXX, KC_SLEP,
         EEP_RST, DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
         __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX, _______,          _______, H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
-        __XXX__, DM_REC2, DM_PLY1, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
+        __XXX__, DM_REC2, DM_PLY2, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
         _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
                                             __XXX__, __XXX__, __XXX__,          __XXX__, __XXX__, __XXX__
     ),
