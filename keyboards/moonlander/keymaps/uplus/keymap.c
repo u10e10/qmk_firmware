@@ -22,42 +22,96 @@
 #include "version.h"
 
 enum layers {
-    BASE,  // default layer
-    SYMB,  // symbols
-    MDIA,  // media keys
+    BASE,
+    SUB,
+    MISC,
+    ADVANCE
 };
 
 enum custom_keycodes {
     VRSN = ML_SAFE_RANGE,
 };
 
+#define _______ KC_TRNS
+#define __XXX__ KC_TRNS // 明示的透過
+#define XXXXXXX KC_NO
+
+#define O(key) OSM(MOD_##key)
+
+#undef C
+#undef A
+#undef G
+#define C(key) RCTL(KC_##key)
+#define A(key) RALT(KC_##key)
+#define G(key) RGUI(KC_##key)
+
+#define C_T(key) RCTL_T(KC_##key)
+#define A_T(key) RALT_T(KC_##key)
+#define G_T(key) RGUI_T(KC_##key)
+
+#define LO_S OSL(SUB)
+#define LO_M OSL(MISC)
+#define LO_A OSL(ADVANCE)
+#define L_S(key) LT(SUB, KC_##key)
+#define L_M(key) LT(MISC, KC_##key)
+#define L_A(key) LT(ADVANCE, KC_##key)
+
+// QK_LCTL | QK_LSFT | QK_LALT | QK_LGUI
+#define H(key)  HYPR(KC_##key)
+#define CA(key) RCTL(RALT(KC_##key))
+#define GA(key) RGUI(RALT(KC_##key))
+#define GC(key) RGUI(RCTL(KC_##key))
+
+// TG(SYMB) WEBUSB_PAIR MO(SYMB) TOGGLE_LAYER_COLOR VRSN
+// KC_AMPR KC_PERC KC_DLR KC_CIRC
+// EEP_RST, RGB_VAI, RGB_HUD, RGB_VAD, RGB_HUI
+// LED_LEVEL,RESET,EEP_RST
+// TERM_ON
+// TERM_OFF
+
+//                                 KC_GRV,  KC_ESC,                                               KC_MINUS,KC_EQL
+//      _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______, _______,
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    // Main layer
     [BASE] = LAYOUT_moonlander(
-        KC_EQL,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_LEFT,           KC_RGHT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        KC_DEL,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    TG(SYMB),         TG(SYMB), KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-        KC_BSPC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HYPR,           KC_MEH,  KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), LGUI_T(KC_QUOT),
-        KC_LSFT, LCTL_T(KC_Z),KC_X,KC_C,    KC_V,    KC_B,                                KC_N,    KC_M,    KC_COMM, KC_DOT,  RCTL_T(KC_SLSH), KC_RSFT,
-    LT(SYMB,KC_GRV),WEBUSB_PAIR,A(KC_LSFT),KC_LEFT, KC_RGHT,  LALT_T(KC_APP),    RCTL_T(KC_ESC),   KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC, MO(SYMB),
-                                            KC_SPC,  KC_BSPC, KC_LGUI,           KC_LALT,  KC_TAB,  KC_ENT
+        KC_APP,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    XXXXXXX,          XXXXXXX, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DM_RSTP,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_TAB,           XXXXXXX, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINUS,
+        C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LBRC,          KC_RBRC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT),
+        L_M(ESC),KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS),
+        KC_MPLY, KC_LGUI, KC_LALT, XXXXXXX, XXXXXXX,          KC_ESC,           KC_ESC,           XXXXXXX, XXXXXXX, KC_LALT, KC_RGUI, KC_ENT,
+                                            O(LSFT), KC_LCTL, XXXXXXX,          XXXXXXX, LO_S,    KC_SPC
     ),
 
-    [SYMB] = LAYOUT_moonlander(
-        VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,           _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-        _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, _______,           _______, KC_UP,   KC_7,    KC_8,    KC_9,    KC_ASTR, KC_F12,
-        _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,  _______,           _______, KC_DOWN, KC_4,    KC_5,    KC_6,    KC_PLUS, _______,
-        _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,                             KC_AMPR, KC_1,    KC_2,    KC_3,    KC_BSLS, _______,
-        EEP_RST, _______, _______, _______, _______,          RGB_VAI,           RGB_TOG,          _______, KC_DOT,  KC_0,    KC_EQL,  _______,
-                                            RGB_HUD, RGB_VAD, RGB_HUI, TOGGLE_LAYER_COLOR,_______, _______
+    // F1~F12, Backspace, Delete, Cursor keys, Lang keys, Symbols
+    [SUB] = LAYOUT_moonlander(
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,          _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LANG5,KC_F11,
+        __XXX__, KC_BSPC, KC_DEL,  XXXXXXX, XXXXXXX, KC_TILD, _______,          _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LANG2,XXXXXXX,
+        __XXX__, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_GRV,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_LANG1,XXXXXXX,
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
+                                            _______, _______, _______,          _______, _______, _______
     ),
 
-    [MDIA] = LAYOUT_moonlander(
-        LED_LEVEL,_______,_______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, RESET,
-        _______, _______, _______, KC_MS_U, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,           _______, _______, _______, _______, _______, _______, KC_MPLY,
-        _______, _______, _______, _______, _______, _______,                             _______, _______, KC_MPRV, KC_MNXT, _______, _______,
-        _______, _______, _______, KC_BTN1, KC_BTN2,         _______,            _______,          KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
-                                            _______, _______, _______,           _______, _______, _______
+    // Mouse keys, Window control shortcuts
+    [MISC] = LAYOUT_moonlander(
+        XXXXXXX, KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,  _______,          _______, KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12,
+        _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),    _______,          _______, GC(Y),   GC(U),   GC(I),   GC(O),   XXXXXXX, KC_FN11,
+        __XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, _______,          _______, GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__,
+        __XXX__, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,                            G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__,
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
+                                            _______, _______, _______,          KC_ACL1, KC_ACL2, KC_ACL0
+    ),
+
+    // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
+    [ADVANCE] = LAYOUT_moonlander(
+        RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP,
+        DEBUG,   DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+        __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX, _______,          _______, H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
+        __XXX__, DM_REC2, DM_PLY1, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
+        _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          __XXX__, _______, __XXX__, __XXX__, _______,
+                                            _______, _______, _______,          _______, _______, _______
     ),
 };
 
