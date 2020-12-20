@@ -96,8 +96,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Mouse keys, Window control shortcuts
     [MISC] = LAYOUT_moonlander(
         XXXXXXX, KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,  _______,          _______, KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12,
-        _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, GA(R),   _______,          _______, GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),GA(R),   KC_FN11,
-        __XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, _______,          _______, GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),GA(M),   __XXX__,
+        _______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, GA(R),   _______,          _______, GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),XXXXXXX, KC_FN11,
+        __XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, _______,          _______, GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__,
         __XXX__, KC_BTN2, KC_WH_L, GA(M),   KC_WH_R, KC_WH_D,                            G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__,
         _______, __XXX__, __XXX__, _______, __XXX__,          _______,          _______,          _______, _______, __XXX__, __XXX__, _______,
                                             __XXX__, __XXX__, __XXX__,          KC_ACL1, KC_ACL2, KC_ACL0
