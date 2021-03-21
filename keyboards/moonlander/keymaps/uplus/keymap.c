@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         C_T(ENT),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LBRC,          KC_RBRC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, L_M(QUOT),
         KC_TAB,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, L_A(BSLS),
         KC_MPLY, KC_LGUI, KC_LALT, KC_GRV,  KC_ESC,           KC_ESC,           KC_ESC,           KC_MINUS,KC_EQL,  KC_LALT, KC_RGUI, KC_ENT,
-                                            O(LSFT), KC_LCTL, KC_LCTL,          LO_S,    LO_S,    KC_SPC
+                                            O(LSFT), KC_LCTL, KC_LGUI,          KC_LGUI, LO_S,    KC_SPC
     ),
 
     // F1~F12, Backspace, Delete, Cursor keys, Lang keys, Symbols
