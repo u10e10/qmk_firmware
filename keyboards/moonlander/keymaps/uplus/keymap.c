@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
     [ADVANCE] = LAYOUT_moonlander(
-        RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, RGB_VAD, XXXXXXX, RGB_VAI, XXXXXXX, KC_SLEP,
+        RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, XXXXXXX, RGB_VAD, RGB_TOG, RGB_VAI, XXXXXXX, KC_SLEP,
         EEP_RST, DM_RSTP, XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, _______,          _______, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
         __XXX__, DM_REC1, DM_PLY1, XXXXXXX, CA(T),   XXXXXXX, _______,          _______, H(A),    H(B),    H(C),    H(D),    H(G),    __XXX__,
         __XXX__, DM_REC2, DM_PLY2, CA(D),   CA(Y),   CA(B),                              H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__,
