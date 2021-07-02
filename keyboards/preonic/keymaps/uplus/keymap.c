@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Mouse keys, Window control shortcuts
 [_MISC] = {
   {XXXXXXX, KC_FN1,  KC_FN2,  KC_FN3,  KC_FN4,  KC_FN5,         KC_FN6,  KC_FN7,  KC_FN8,  KC_FN9,  KC_FN10, KC_FN12},
-  {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(Y),   GC(U),   GC(I),   GC(O),   G(W),    KC_FN11},
+  {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),G(W),    KC_FN11},
   {__XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,        GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__},
   {__XXX__, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
   {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        G(S),    G(F),    _______, __XXX__, __XXX__, _______},
@@ -137,7 +137,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {TERM_ON, XXXXXXX, XXXXXXX, XXXXXXX, CA(Y),   CA(B),          H(E),    KC_MPRV, KC_MPLY, KC_MNXT, H(F),    __XXX__},
   {TERM_OFF,__XXX__, __XXX__, _______, __XXX__, __XXX__,        __XXX__, __XXX__, _______, __XXX__, __XXX__, _______}
 },
-
 
 [_COLEMAK] = {
   {KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC},
