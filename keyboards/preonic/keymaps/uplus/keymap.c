@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, KC_BTN3, KC_WBAK, KC_MS_U, KC_WFWD, G(R),           GC(LEFT),GC(DOWN),GC(UP),  GC(RGHT),G(W),    KC_FN11},
   {__XXX__, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,        GA(LEFT),GA(DOWN),GA(UP),  GA(RGHT),XXXXXXX, __XXX__},
   {__XXX__, KC_BTN2, KC_WH_L, G(M),    KC_WH_R, KC_WH_D,        G(LEFT), G(DOWN), G(UP),   G(RGHT), XXXXXXX, __XXX__},
-  {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        G(S),    G(F),    _______, __XXX__, __XXX__, _______},
+  {_______, __XXX__, __XXX__, _______, __XXX__, __XXX__,        KC_ACL2, KC_ACL0, _______, __XXX__, __XXX__, _______},
 },
 
 // Media keys, Media control shortcuts, Dynamic macro keys, Sleep, etc...
